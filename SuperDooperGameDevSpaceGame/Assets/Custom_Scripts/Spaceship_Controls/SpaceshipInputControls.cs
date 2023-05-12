@@ -6,8 +6,16 @@ using UnityEngine.InputSystem;
 public class SpaceshipInputControls : MonoBehaviour
 {
     [SerializeField] SpaceshipMovement shipMovement;
+    public UIPlayer thisUiPlayer;
     Vector2 moveInputs;
     bool primaryFire, secondaryFire;
+
+    private void Start()
+    {
+        thisUiPlayer = UIManager.Instance.uIPlayers[UIManager.Instance.assignmentIndex];
+        UIManager.Instance.assignmentIndex++;
+        thisUiPlayer.SetHealthSlider(100f);
+    }
 
     // Update is called once per frame
     void Update()

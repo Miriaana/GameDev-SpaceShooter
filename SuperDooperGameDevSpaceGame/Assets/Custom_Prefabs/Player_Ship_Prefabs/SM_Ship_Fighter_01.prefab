@@ -243,12 +243,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059825283346205506}
   - {fileID: 5062062687017889814}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062686648543357
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,12 +456,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059712221620551826}
   - {fileID: 5062062687214079574}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062686748609801
 GameObject:
   m_ObjectHideFlags: 0
@@ -933,12 +933,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059670864922332422}
   - {fileID: 5062062688301889091}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062687017889812
 GameObject:
   m_ObjectHideFlags: 0
@@ -1793,11 +1793,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059198488617076649}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062687247693004
 GameObject:
   m_ObjectHideFlags: 0
@@ -2026,12 +2026,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 0
+  curAmmo: 3
   allWeapons:
   - {fileID: 5062062688073231320}
   - {fileID: 5062062688566187141}
   fireRatePerSecond: 10
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062687268001718
 GameObject:
   m_ObjectHideFlags: 0
@@ -2828,12 +2828,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 0
+  curAmmo: 3
   allWeapons:
   - {fileID: 5062062687917042478}
   - {fileID: 5062062687718651118}
   fireRatePerSecond: 10
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062687546948261
 GameObject:
   m_ObjectHideFlags: 0
@@ -3723,12 +3723,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059479335049470078}
   - {fileID: 5062062688323101908}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062687881266161
 GameObject:
   m_ObjectHideFlags: 0
@@ -4510,6 +4510,7 @@ MonoBehaviour:
   - {fileID: 5062062687258465739}
   - {fileID: 5062062688448617885}
   mainComponent: {fileID: 5062062687345559117}
+  weaponIndex: 0
 --- !u!114 &5062062688123766176
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4532,6 +4533,7 @@ MonoBehaviour:
   - {fileID: 5062062687006396156}
   - {fileID: 5062062687246803749}
   mainComponent: {fileID: 5062062687345559117}
+  weaponIndex: 0
 --- !u!1 &5062062688137141684
 GameObject:
   m_ObjectHideFlags: 0
@@ -6422,12 +6424,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 0
+  curAmmo: 3
   allWeapons:
   - {fileID: 5062062687180448353}
   - {fileID: 5062062687268001672}
   fireRatePerSecond: 10
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062688458018359
 GameObject:
   m_ObjectHideFlags: 0
@@ -6475,12 +6477,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 0
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059564831330340654}
   - {fileID: 5062062688266775126}
   fireRatePerSecond: 10
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062688464898357
 GameObject:
   m_ObjectHideFlags: 0
@@ -6765,12 +6767,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059163640104416936}
   - {fileID: 5062062688464898358}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062688507059974
 GameObject:
   m_ObjectHideFlags: 0
@@ -6849,12 +6851,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fireMode: 1
+  curAmmo: 3
   allWeapons:
   - {fileID: 5059871279803725895}
   - {fileID: 5062062688198682685}
   fireRatePerSecond: 0.25
   limitedAmmo: 0
-  curAmmo: 3
 --- !u!1 &5062062688566187139
 GameObject:
   m_ObjectHideFlags: 0
@@ -7815,6 +7817,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipMovement: {fileID: 5062062687345559116}
+  thisUiPlayer: {fileID: 0}
 --- !u!114 &5062062687345559116
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7831,6 +7834,7 @@ MonoBehaviour:
   curMovementSpeed: 40
   maxTurnAngle: 20
   spaceshipMain: {fileID: 5062062687345559117}
+  maxCarryingWeight: 100
 --- !u!114 &5062062687345559117
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7843,6 +7847,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071964fcc6231f04e959236a8950664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  usedMaterial:
+  - {fileID: 2100000, guid: 590c03f519d4cd04ebfa3c2dc671f0f0, type: 2}
+  - {fileID: 2100000, guid: 9cc05dbbc727f27499fdb727a4d10523, type: 2}
+  - {fileID: 2100000, guid: 8aa6a9949527d4847b3b3d27c46b3775, type: 2}
+  - {fileID: 2100000, guid: daaabb76cd1ab0f43a9b8bb4f9daed35, type: 2}
+  shipMesh:
+  - {fileID: 4300000, guid: df183b756c0d6f542852af3c753d4e80, type: 3}
+  - {fileID: 4300000, guid: b8606594e43458a479cf2557a07db8ce, type: 3}
+  - {fileID: 4300000, guid: 3fa985975343a5a41a6756e9a237ca39, type: 3}
   primaryWeapons: {fileID: 5062062688458018312}
   secondaryWeapons: {fileID: 5062062688473630695}
   mainHull: {fileID: 0}
@@ -7860,7 +7873,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   curHealth: 100
-  armor: 1000
+  armor: 100
 --- !u!114 &5091017439608349259
 MonoBehaviour:
   m_ObjectHideFlags: 0

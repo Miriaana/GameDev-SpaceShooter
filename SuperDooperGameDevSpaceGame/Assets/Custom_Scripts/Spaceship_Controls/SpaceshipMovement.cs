@@ -17,13 +17,14 @@ public class SpaceshipMovement : MonoBehaviour
 
     public void MoveShip(Vector3 newDir)
     {
+        Debug.Log(newDir + "::" + transform.position.z);
         if (transform.position.x < -120f && newDir.x < 0f || transform.position.x > 120f && newDir.x > 0f)
         {
             newDir.x = 0f;
         }
-        if(transform.position.y > 50f && newDir.y > 0f || transform.position.y < -50f && newDir.y < 0f)
+        if(transform.position.z > 30f && newDir.z > 0f || transform.position.z < -65f && newDir.z < 0f)
         {
-            newDir.y = 0f;
+            newDir.z = 0f;
         }
         //
         body.velocity = newDir;

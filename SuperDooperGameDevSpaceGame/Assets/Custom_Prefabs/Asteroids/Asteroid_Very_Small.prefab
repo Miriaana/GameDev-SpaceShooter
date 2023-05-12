@@ -134,6 +134,7 @@ MonoBehaviour:
   objectSize: 1
   instantiatedDebris:
   - {fileID: 5241205373913232080, guid: 1e2f8a3fdfe6a274bbead66623121605, type: 3}
+  - {fileID: 7728481902777875411, guid: b323c40d307addc4e95d17f7591f3e11, type: 3}
 --- !u!114 &2774927760621361375
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -161,7 +162,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33de35fe5e3197f4ea4ca12b70811c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 30
   changeFrequency: 0.5
   directionRandomizer: 0
   rotationSpeeds: {x: 200, y: 200, z: 200}

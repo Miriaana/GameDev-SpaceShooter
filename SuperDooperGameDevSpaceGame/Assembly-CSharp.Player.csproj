@@ -78,6 +78,9 @@
     <Compile Include="Assets\Custom_Scripts\Camera_System\CameraViewpoint.cs" />
     <Compile Include="Assets\Custom_Scripts\Sound_System\SoundEffectMaster.cs" />
     <Compile Include="Assets\Custom_Scripts\Damage_System\SoundWaveProjectile.cs" />
+    <Compile Include="Assets\Custom_Scripts\User_Interface\UIPlayer.cs" />
+    <Compile Include="Assets\Custom_Scripts\User_Interface\UIManager.cs" />
+    <Compile Include="Assets\Custom_Scripts\Collectables\BaseCollectable.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
