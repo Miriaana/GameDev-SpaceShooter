@@ -6,15 +6,14 @@ using UnityEngine.InputSystem;
 public class SpaceshipInputControls : MonoBehaviour
 {
     [SerializeField] SpaceshipMovement shipMovement;
-    public UIPlayer thisUiPlayer;
+    [SerializeField] GameObject [] spaceshipPrefab;
     Vector2 moveInputs;
     bool primaryFire, secondaryFire;
 
     private void Start()
     {
-        thisUiPlayer = UIManager.Instance.uIPlayers[UIManager.Instance.assignmentIndex];
-        UIManager.Instance.assignmentIndex++;
-        thisUiPlayer.SetHealthSlider(100f);
+        shipMovement = Instantiate(spaceshipPrefab[Random.Range(0, spaceshipPrefab.Length)], transform.position, transform.rotation).GetComponent<SpaceshipMovement>();
+        GameStateManager.Instance.AddSpaceshipToList(shipMovement.gameObject.GetComponent<SpaceshipMainComponent>());
     }
 
     // Update is called once per frame

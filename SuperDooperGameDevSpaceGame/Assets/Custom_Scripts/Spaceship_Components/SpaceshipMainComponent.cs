@@ -8,9 +8,13 @@ public class SpaceshipMainComponent : MonoBehaviour
     public Mesh[] shipMesh;
     [SerializeField] WeaponSystem primaryWeapons, secondaryWeapons;
     [SerializeField] Hull mainHull;
+    public UIPlayer thisUiPlayer;
 
     private void Start()
     {
+        thisUiPlayer = UIManager.Instance.uIPlayers[UIManager.Instance.assignmentIndex];
+        UIManager.Instance.assignmentIndex++;
+        thisUiPlayer.SetHealthSlider(100f);
         GetComponent<Renderer>().material = usedMaterial[Random.Range(0, usedMaterial.Length)];
         GetComponent<MeshFilter>().mesh = shipMesh[Random.Range(0, shipMesh.Length)];
     }
@@ -33,5 +37,10 @@ public class SpaceshipMainComponent : MonoBehaviour
     public void SetSecondaryWeaponSystemTo(WeaponSystem weaponSystem)
     {
         secondaryWeapons = weaponSystem;
+    }
+
+    public void OnDestroy()
+    {
+        GameStateManager.Instance.RemoveSpaceshipFromList(this);
     }
 }
