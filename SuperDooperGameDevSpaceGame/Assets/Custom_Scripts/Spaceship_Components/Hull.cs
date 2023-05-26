@@ -10,9 +10,9 @@ public class Hull : MonoBehaviour
     {
         float damageTaken = dmgAmount * 100f / (100f + Mathf.Clamp(armor - (armor * armorPen), 0f, armor) );
         curHealth -= damageTaken;
-        if(GetComponent<SpaceshipInputControls>() != null)
+        if(GetComponent<SpaceshipMainComponent>() != null)
         {
-            GetComponent<SpaceshipInputControls>().thisUiPlayer.SetHealthSlider(curHealth);
+            GetComponent<SpaceshipMainComponent>().thisUiPlayer.SetHealthSlider(curHealth);
         }
         return curHealth;
     }

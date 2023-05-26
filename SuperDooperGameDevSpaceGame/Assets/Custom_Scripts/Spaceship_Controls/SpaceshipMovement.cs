@@ -6,8 +6,9 @@ using UnityEngine;
 public class SpaceshipMovement : MonoBehaviour
 {
     [SerializeField] float baseMovementSpeed = 10f, curMovementSpeed = 10f, maxTurnAngle = 20f;
+    [SerializeField] GameObject collisionImpact;
     public SpaceshipMainComponent spaceshipMain;
-    public float maxCarryingWeight = 100f;
+    public float maxCarryingWeight = 100f, bumpTimer = 0f, explosionForceMod = 1000f;
     Rigidbody body;
 
     private void Start()
@@ -27,12 +28,21 @@ public class SpaceshipMovement : MonoBehaviour
             newDir.z = 0f;
         }
         //
-        body.velocity = newDir;
-        body.angularVelocity = Vector3.zero;
+        if(body != null && bumpTimer == 0)
+        {
+            body.velocity = newDir;
+            body.angularVelocity = Vector3.zero;
+        }
         if(transform.position.y != 0f)
         {
             transform.position = new Vector3(transform.position.x, 0f, transform.position.z);
         }
+    }
+
+    private void Update()
+    {
+        bumpTimer -= Time.deltaTime;
+        bumpTimer = Mathf.Clamp(bumpTimer, 0f, 1f);
     }
 
     public Vector3 SteerHor(float dir)
@@ -44,5 +54,19 @@ public class SpaceshipMovement : MonoBehaviour
     public Vector3 SteerVert(float dir)
     {
         return Vector3.forward * dir * curMovementSpeed;
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.GetComponent<SpaceshipMovement>() != null)
+        {
+            bumpTimer = 0.25f;
+            collision.rigidbody.AddExplosionForce(explosionForceMod, transform.position, 25f);
+            collision.collider.gameObject.GetComponent<DestroyableObject>().DamageHull(body.velocity.magnitude, 1f);
+        }
+        if(collisionImpact != null)
+        {
+            Instantiate(collisionImpact, collision.contacts[0].point, Quaternion.identity);
+        }
     }
 }

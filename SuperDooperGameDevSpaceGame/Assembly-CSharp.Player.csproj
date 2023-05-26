@@ -60,16 +60,19 @@
     <Compile Include="Assets\Custom_Scripts\Camera_System\CameraMovement.cs" />
     <Compile Include="Assets\Custom_Scripts\Damage_System\BeamProjectile.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\WeaponSwitcher.cs" />
+    <Compile Include="Assets\Custom_Scripts\User_Interface\UIManager.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\SpaceshipMainComponent.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\SpaceshipComponent.cs" />
     <Compile Include="Assets\Custom_Scripts\Damage_System\BaseDamagingProjectile.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\Hull.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\Weapon.cs" />
+    <Compile Include="Assets\Custom_Scripts\User_Interface\UIPlayer.cs" />
     <Compile Include="Assets\Custom_Scripts\Asteroids\Asteroid.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\WeaponSystem.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\Turret.cs" />
     <Compile Include="Assets\Custom_Scripts\Utility\DestroyOverTime.cs" />
     <Compile Include="Assets\Custom_Scripts\Asteroids\AsteroidSpawner.cs" />
+    <Compile Include="Assets\Custom_Scripts\Collectables\BaseCollectable.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Controls\SpaceshipInputControls.cs" />
     <Compile Include="Assets\Custom_Scripts\Damage_System\RocketProjectile.cs" />
     <Compile Include="Assets\Custom_Scripts\Spaceship_Components\ShipAttributeAssign.cs" />
@@ -78,9 +81,7 @@
     <Compile Include="Assets\Custom_Scripts\Camera_System\CameraViewpoint.cs" />
     <Compile Include="Assets\Custom_Scripts\Sound_System\SoundEffectMaster.cs" />
     <Compile Include="Assets\Custom_Scripts\Damage_System\SoundWaveProjectile.cs" />
-    <Compile Include="Assets\Custom_Scripts\User_Interface\UIPlayer.cs" />
-    <Compile Include="Assets\Custom_Scripts\User_Interface\UIManager.cs" />
-    <Compile Include="Assets\Custom_Scripts\Collectables\BaseCollectable.cs" />
+    <Compile Include="Assets\Custom_Scripts\Game_Management\GameStateManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />

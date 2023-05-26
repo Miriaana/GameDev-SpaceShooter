@@ -20,14 +20,9 @@ public class UIManager : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void UpdateTimerText(string newTimeCode)
     {
-        if (timeRemaining > 0)
-        {
-            timeRemaining -= Time.deltaTime;
-            TimerText.text = string.Format("{0:N2}", timeRemaining);
-        }
+        TimerText.text = newTimeCode;
     }
 
     public void DisablePlayer(int num)

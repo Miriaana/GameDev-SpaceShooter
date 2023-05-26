@@ -27,9 +27,9 @@ public class BaseCollectable : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.GetComponent<SpaceshipInputControls>() != null)
+        if(other.gameObject.GetComponent<SpaceshipMainComponent>() != null)
         {
-            other.gameObject.GetComponent<SpaceshipInputControls>().thisUiPlayer.UpdateScore(pointsToScore);
+            other.gameObject.GetComponent<SpaceshipMainComponent>().thisUiPlayer.UpdateScore(pointsToScore);
             Destroy(gameObject);
         }
     }
