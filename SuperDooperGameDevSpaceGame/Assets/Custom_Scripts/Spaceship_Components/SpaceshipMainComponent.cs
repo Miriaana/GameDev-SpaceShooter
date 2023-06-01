@@ -8,15 +8,20 @@ public class SpaceshipMainComponent : MonoBehaviour
     public Mesh[] shipMesh;
     [SerializeField] WeaponSystem primaryWeapons, secondaryWeapons;
     [SerializeField] Hull mainHull;
+    public string playerName;
+    public int score { get; set; }
     public UIPlayer thisUiPlayer;
 
     private void Start()
     {
         thisUiPlayer = UIManager.Instance.uIPlayers[UIManager.Instance.assignmentIndex];
-        UIManager.Instance.assignmentIndex++;
+        playerName = $"Player {UIManager.Instance.assignmentIndex}";
+        thisUiPlayer.SetName(playerName);
         thisUiPlayer.SetHealthSlider(100f);
         GetComponent<Renderer>().material = usedMaterial[Random.Range(0, usedMaterial.Length)];
         GetComponent<MeshFilter>().mesh = shipMesh[Random.Range(0, shipMesh.Length)];
+
+        UIManager.Instance.assignmentIndex++;
     }
 
     public void FirePrimaryWeapons()

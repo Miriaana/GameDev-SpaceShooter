@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameStateManager : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class GameStateManager : MonoBehaviour
     public enum GameState { Starting, Playing, End }
     [SerializeField] private GameState currentState;
     [SerializeField] List<SpaceshipMainComponent> allControls;
-    float timeRemaining = 30f;
+    [SerializeField] float timeRemaining = 30f;
 
     private void Start()
     {
@@ -37,10 +38,22 @@ public class GameStateManager : MonoBehaviour
 
     }
 
+    public void RestartGame()
+    {
+        //timeRemaining = 100f;
+        //currentState = GameState.Playing;
+        //Time.timeScale = 1f;
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
     public void EndGame()
     {
         Debug.LogError("GAME ENDEEEEEEEEEEEEEEEEED");
         currentState = GameState.End;
+        Time.timeScale = 0f;
+        UIManager.Instance.GameOverMenu.ShowScores(allControls);
+        UIManager.Instance.OpenGameOverMenu();
     }
 
     public void AddSpaceshipToList(SpaceshipMainComponent newSpaceship)
@@ -51,7 +64,7 @@ public class GameStateManager : MonoBehaviour
     public void RemoveSpaceshipFromList(SpaceshipMainComponent removedSpaceship)
     {
         allControls.Remove(removedSpaceship);
-        if(allControls.Count == 0 )
+        if(allControls.Count == 0 && currentState == GameState.Playing)
         {
             EndGame();
         }
