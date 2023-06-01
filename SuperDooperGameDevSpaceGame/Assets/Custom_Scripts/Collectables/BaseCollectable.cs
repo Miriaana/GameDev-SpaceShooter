@@ -29,6 +29,7 @@ public class BaseCollectable : MonoBehaviour
     {
         if(other.gameObject.GetComponent<SpaceshipMainComponent>() != null)
         {
+            other.gameObject.GetComponent<SpaceshipMainComponent>().score += pointsToScore;
             other.gameObject.GetComponent<SpaceshipMainComponent>().thisUiPlayer.UpdateScore(pointsToScore);
             Destroy(gameObject);
         }

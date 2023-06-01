@@ -9,7 +9,8 @@ public class UIManager : MonoBehaviour
     public UIPlayer[] uIPlayers;
     public TextMeshProUGUI TimerText;
     public int assignmentIndex = 0;
-    public float timeRemaining;
+    //public float timeRemaining;
+    public UIGameOver GameOverMenu;
 
     // Start is called before the first frame update
     void Start()
@@ -33,5 +34,16 @@ public class UIManager : MonoBehaviour
     public void EnablePlayer(int num)
     {
         uIPlayers[num].gameObject.SetActive(true);
+    }
+
+    public void RestartGame()
+    {
+        Debug.Log("Restarting Game");
+        GameStateManager.Instance.RestartGame();
+    }
+
+    public void OpenGameOverMenu()
+    {
+        GameOverMenu.gameObject.SetActive(true);
     }
 }
