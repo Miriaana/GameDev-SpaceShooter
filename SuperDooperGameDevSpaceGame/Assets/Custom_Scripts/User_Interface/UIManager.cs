@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
     public static UIManager Instance;
     public UIPlayer[] uIPlayers;
+    public string[] Playernames = { "Blue", "Green", "Yellow", "Purple" };
     public TextMeshProUGUI TimerText;
     public int assignmentIndex = 0;
     //public float timeRemaining;

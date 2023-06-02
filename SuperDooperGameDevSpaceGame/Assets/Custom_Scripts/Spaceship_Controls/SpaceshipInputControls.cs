@@ -19,7 +19,7 @@ public class SpaceshipInputControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(shipMovement != null)
+        if(shipMovement != null && !shipMovement.aiControlled)
         {
             shipMovement.MoveShip(shipMovement.SteerHor(moveInputs.x) + shipMovement.SteerVert(moveInputs.y));
             if (primaryFire)
