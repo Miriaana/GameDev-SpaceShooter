@@ -13,6 +13,8 @@ public class SpaceshipMainComponent : MonoBehaviour
     public int score { get; set; }
     public UIPlayer thisUiPlayer;
 
+    private bool isFiring;
+
     private void Start()
     {
         thisUiPlayer = UIManager.Instance.uIPlayers[UIManager.Instance.assignmentIndex];
@@ -22,6 +24,8 @@ public class SpaceshipMainComponent : MonoBehaviour
         GetComponent<MeshFilter>().mesh = shipMesh[Random.Range(0, shipMesh.Length)];
         SetMaterial(UIManager.Instance.assignmentIndex);
         UIManager.Instance.assignmentIndex++;
+
+        isFiring = false;
     }
 
     public void SetMaterial(int index)
@@ -36,10 +40,14 @@ public class SpaceshipMainComponent : MonoBehaviour
 
     public void FireSecondaryWeapons()
     {
-        if (thisUiPlayer.CheckAmmo() > 0)
+        if (thisUiPlayer.CheckAmmo() > 0 && isFiring == false)
         {
+            isFiring = true;
+            Debug.Log("Fire");
             secondaryWeapons.Fire();
             thisUiPlayer.SubAmmo(1);
+            ExampleCoroutine();
+            isFiring = false;
         }
     }
 
@@ -56,5 +64,10 @@ public class SpaceshipMainComponent : MonoBehaviour
     public void OnDestroy()
     {
         GameStateManager.Instance.RemoveSpaceshipFromList(this);
+    }
+
+    IEnumerator ExampleCoroutine()
+    {
+        yield return new WaitForSeconds(2);
     }
 }
