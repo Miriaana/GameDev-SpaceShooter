@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpaceshipMainComponent))]
 public class SpaceshipMovement : MonoBehaviour
 {
+    public bool aiControlled = false;
     [SerializeField] float baseMovementSpeed = 10f, curMovementSpeed = 10f, maxTurnAngle = 20f;
     [SerializeField] GameObject collisionImpact;
     public SpaceshipMainComponent spaceshipMain;
@@ -18,13 +19,20 @@ public class SpaceshipMovement : MonoBehaviour
 
     public void MoveShip(Vector3 newDir)
     {
-        if (transform.position.x < -120f && newDir.x < 0f || transform.position.x > 120f && newDir.x > 0f)
+        if (!aiControlled)
         {
-            newDir.x = 0f;
+            if (transform.position.x < -120f && newDir.x < 0f || transform.position.x > 120f && newDir.x > 0f)
+            {
+                newDir.x = 0f;
+            }
+            if (transform.position.z > 30f && newDir.z > 0f || transform.position.z < -65f && newDir.z < 0f)
+            {
+                newDir.z = 0f;
+            }
         }
-        if(transform.position.z > 30f && newDir.z > 0f || transform.position.z < -65f && newDir.z < 0f)
+        else
         {
-            newDir.z = 0f;
+            newDir = -Vector3.forward;
         }
         //
         if(body != null && bumpTimer == 0)

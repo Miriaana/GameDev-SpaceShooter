@@ -4,9 +4,16 @@ using UnityEngine;
 
 public class Turret : MonoBehaviour
 {
+    public int Team = 1;
     [SerializeField] Transform target, baseTransform, gunTransform;
     [SerializeField] float turnSpeed = 35f;
     [SerializeField] WeaponSystem weaponSystem;
+    Collider sphereCollider;
+
+    private void Start()
+    {
+        sphereCollider = GetComponent<Collider>();
+    }
 
     private void Update()
     {
@@ -16,6 +23,10 @@ public class Turret : MonoBehaviour
             {
                 weaponSystem.Fire();
             }
+        }
+        else
+        {
+            sphereCollider.enabled = true;
         }
     }
 
@@ -46,5 +57,14 @@ public class Turret : MonoBehaviour
             return false;
         }
         return true;
+    }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        if(other.GetComponent<SpaceshipMainComponent>().Team != Team)
+        {
+            target = other.transform;
+            sphereCollider.enabled = false;
+        }
     }
 }

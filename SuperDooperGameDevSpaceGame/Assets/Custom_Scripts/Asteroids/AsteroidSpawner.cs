@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class AsteroidSpawner : MonoBehaviour
 {
-    public float spawnTime = 5f;
+    public float spawnTime = 5f, spawnCounter = 0f;
+    public int maxRandomSpawnCount = 4;
     [SerializeField] Transform leftBorder, rightBorder;
     [SerializeField] GameObject[] allAsteroids;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnAsteroid", 0.5f, spawnTime);   
+        StartCoroutine("SpawnCo");
     }
 
     public void SpawnAsteroid()
@@ -20,5 +21,18 @@ public class AsteroidSpawner : MonoBehaviour
         var obj = Instantiate(allAsteroids[Random.Range(0, allAsteroids.Length)], spawnPosition, transform.rotation);
         obj.GetComponent<Asteroid>().RandomizeRotationSpeeds();
         obj.GetComponent<Asteroid>().RandomizeDirection();
+    }
+
+    IEnumerator SpawnCo()
+    {
+        float timeMod = Mathf.Clamp(spawnTime / spawnCounter, 0.25f, spawnTime);
+        yield return new WaitForSeconds(spawnTime );
+        int ranNr = Random.Range(1, maxRandomSpawnCount);
+        for (int i = 0; i < ranNr; i++)
+        {
+            SpawnAsteroid();
+        }
+        spawnCounter++;
+        StartCoroutine("SpawnCo");
     }
 }
