@@ -36,7 +36,11 @@ public class SpaceshipMainComponent : MonoBehaviour
 
     public void FireSecondaryWeapons()
     {
-        secondaryWeapons.Fire();
+        if (thisUiPlayer.CheckAmmo() > 0)
+        {
+            secondaryWeapons.Fire();
+            thisUiPlayer.SubAmmo(1);
+        }
     }
 
     public void SetPrimaryWeaponSystemTo(WeaponSystem weaponSystem)
