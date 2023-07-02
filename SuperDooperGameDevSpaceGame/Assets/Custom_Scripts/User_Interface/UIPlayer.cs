@@ -32,13 +32,13 @@ public class UIPlayer : MonoBehaviour
     public void AddAmmo(int num)
     {
         ammo += num;
-        AmmoText.text = "Ammo: " + ammo;
+        AmmoText.text = "Ammo: " + "Ready";
     }
 
     public void SubAmmo(int num)
     {
         ammo -= num;
-        AmmoText.text = "Ammo: " + ammo;
+        AmmoText.text = "Ammo: " + "Empty";
     }
 
     public int CheckAmmo()

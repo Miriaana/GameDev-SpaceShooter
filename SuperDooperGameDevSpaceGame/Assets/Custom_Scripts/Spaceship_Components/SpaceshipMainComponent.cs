@@ -40,14 +40,14 @@ public class SpaceshipMainComponent : MonoBehaviour
 
     public void FireSecondaryWeapons()
     {
-        if (thisUiPlayer.CheckAmmo() > 0 && isFiring == false)
+        if (thisUiPlayer.CheckAmmo() > 0/*&& isFiring == false*/)
         {
-            isFiring = true;
-            Debug.Log("Fire");
+            //isFiring = true;
+            //Debug.Log("Fire");
             secondaryWeapons.Fire();
             thisUiPlayer.SubAmmo(1);
-            ExampleCoroutine();
-            isFiring = false;
+            //ExampleCoroutine();
+            //isFiring = false;
         }
     }
 
