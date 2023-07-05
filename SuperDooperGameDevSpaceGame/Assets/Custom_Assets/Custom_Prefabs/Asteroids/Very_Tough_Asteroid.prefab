@@ -148,7 +148,7 @@ MonoBehaviour:
   teamNumber: 1
   objectSize: 1
   instantiatedDebris:
-  - {fileID: 5241205373913232080, guid: 1e2f8a3fdfe6a274bbead66623121605, type: 3}
+  - {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
 --- !u!114 &5419473029151195237
 MonoBehaviour:
   m_ObjectHideFlags: 0

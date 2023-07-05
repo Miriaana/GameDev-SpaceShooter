@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Hull : MonoBehaviour
 {
-    [SerializeField] float maxHealth = 100f, curHealth = 100f, armor = 10f;
+    public float maxHealth = 100f, curHealth = 100f, armor = 10f;
 
     public float TakeDamage(float dmgAmount, float armorPen = 0f)
     {

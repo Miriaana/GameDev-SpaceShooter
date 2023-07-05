@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Asteroid : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 3f, changeFrequency = 0.5f, directionRandomizer = 0f;
+    [SerializeField] float moveSpeed = 3f, directionRandomizer = 0f;
     [SerializeField] Vector3 rotationSpeeds;
     [SerializeField] GameObject collisionInst;
     Rigidbody body;

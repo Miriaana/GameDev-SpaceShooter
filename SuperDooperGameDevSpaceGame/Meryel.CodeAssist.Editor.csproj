@@ -343,8 +343,8 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.WebGL.Extensions">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\WebGLSupport\UnityEditor.WebGL.Extensions.dll</HintPath>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
@@ -402,6 +402,12 @@
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -778,20 +784,24 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{FC4E6A92-836C-0847-BDB7-337F4626EA8C}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{EE2F8C13-E216-4CAE-242C-E23D318DB44D}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{D4E5FC22-E856-5B25-83FC-143FF447C271}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{BF1B8DFB-B6C1-27B7-E8D1-DA815729C994}</Project>
+      <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

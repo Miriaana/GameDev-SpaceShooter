@@ -4710,10 +4710,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 25
-  hitPrefab: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}
+  hitPrefab: {fileID: 3424975774522454270, guid: daf2a77cc9ff74a48b33c497ba907b9c, type: 3}
   spawnSound: {fileID: 8300000, guid: d1d682ad3480ac04dbc9140928a57935, type: 3}
   deathSound: {fileID: 8300000, guid: cd5c0b2becd4f354d908b1a794e8dd2d, type: 3}
   destroyedOnImpact: 1
+  yAxisErrorRange: 1
 --- !u!65 &337431806046506395
 BoxCollider:
   m_ObjectHideFlags: 0

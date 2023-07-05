@@ -7,9 +7,9 @@ public class ShipAttributeAssign : MonoBehaviour
     [SerializeField] WeaponSwitcher primaryWeaponSwitcher, secondaryWeaponSwitcher;
     [SerializeField] Hull hull;
     [SerializeField] SpaceshipMovement shipMovement;
-    int primaryWeaponIndex = 0, secondaryWeaponIndex = 0, hullArmorIndex = 0;
+    int primaryWeaponIndex = 0, secondaryWeaponIndex = 0;
 
-    public void SwapPrimaryWeapon(int direction)
+    /*public void SwapPrimaryWeapon(int direction)
     {
         if(primaryWeaponIndex >= primaryWeaponSwitcher.allWeaponSystems.Length)
         {
@@ -33,7 +33,7 @@ public class ShipAttributeAssign : MonoBehaviour
             secondaryWeaponIndex = secondaryWeaponSwitcher.allWeaponSystems.Length - 1;
         }
         secondaryWeaponSwitcher.SetCurrentWeaponSystem(secondaryWeaponIndex);
-    }
+    }*/
 
     public void SwapArmorClass(int direction)
     {

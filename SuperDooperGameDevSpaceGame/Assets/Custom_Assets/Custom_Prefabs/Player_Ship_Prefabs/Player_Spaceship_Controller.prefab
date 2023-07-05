@@ -47,7 +47,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shipMovement: {fileID: 0}
   spaceshipPrefab:
-  - {fileID: 5610644016739378760, guid: c2e598afb04bd314c9fbb7fd6780e98e, type: 3}
+  - {fileID: 1606366873843811797, guid: 2b2c1a57ff3e6d740af7760d0edb7616, type: 3}
+  - {fileID: 7536462957985634433, guid: acfebbd9705c20a48acc91bef0c6a6fa, type: 3}
+  - {fileID: 7641616638304359320, guid: 5549849e0522e2c49ba3df89589cc94c, type: 3}
+  - {fileID: 1454547110562731137, guid: 9627458cd9a308d4b8247a98cdb4d960, type: 3}
 --- !u!114 &854139501904378277
 MonoBehaviour:
   m_ObjectHideFlags: 0

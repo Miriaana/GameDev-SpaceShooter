@@ -10,8 +10,8 @@ public class DestroyableObject : MonoBehaviour
     [SerializeField] float objectSize = 1f;
     [SerializeField] GameObject[] instantiatedDebris;
     bool hasBeenDestroyed = false;
-
     protected Hull compHull;
+
     private void Start()
     {
         compHull = GetComponent<Hull>();
@@ -39,5 +39,25 @@ public class DestroyableObject : MonoBehaviour
             }
         }
         Destroy(gameObject);
+    }
+
+    public float GetMaxHealth()
+    {
+        CheckForHull();
+        return compHull.maxHealth;
+    }
+
+    public float GetCurHealth()
+    {
+        CheckForHull();
+        return compHull.curHealth;
+    }
+
+    void CheckForHull()
+    {
+        if(compHull == null)
+        {
+            compHull = GetComponent<Hull>();
+        }
     }
 }

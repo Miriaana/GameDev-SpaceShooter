@@ -5,28 +5,37 @@ using UnityEngine;
 public class Turret : MonoBehaviour
 {
     public int Team = 1;
+    public bool active = false;
     [SerializeField] Transform target, baseTransform, gunTransform;
-    [SerializeField] float turnSpeed = 35f;
+    [SerializeField] float turnSpeed = 35f, inactiveToleranceTime = 3f;
     [SerializeField] WeaponSystem weaponSystem;
     Collider sphereCollider;
+    float inactiveTimer;
+    
 
     private void Start()
     {
         sphereCollider = GetComponent<Collider>();
+        inactiveTimer = inactiveToleranceTime;
     }
 
     private void Update()
     {
-        if(target != null)
+        if(active)
         {
-            if(TurnBase() && TurnGuns())
+            if (target != null && inactiveTimer >= 0)
             {
-                weaponSystem.Fire();
+                if (TurnBase() && TurnGuns())
+                {
+                    weaponSystem.Fire();
+                }
+                inactiveTimer -= Time.deltaTime;
             }
-        }
-        else
-        {
-            sphereCollider.enabled = true;
+            else
+            {
+                sphereCollider.enabled = true;
+                inactiveTimer = inactiveToleranceTime;
+            }
         }
     }
 
@@ -47,10 +56,7 @@ public class Turret : MonoBehaviour
     {
         Vector3 gunsViewDirection = -gunTransform.up;
         Vector3 directionToTarget = target.transform.position - gunTransform.position;
-
         float dot = Vector3.Dot(directionToTarget.normalized, gunsViewDirection.normalized);
-
-        Debug.Log(dot);
         if(Mathf.Abs(dot) > 0.0001f)
         {
             gunTransform.Rotate(Vector3.right, Mathf.Sign(dot) * Time.deltaTime * turnSpeed);
@@ -61,7 +67,7 @@ public class Turret : MonoBehaviour
 
     public void OnTriggerEnter(Collider other)
     {
-        if(other.GetComponent<SpaceshipMainComponent>().Team != Team)
+        if(other.GetComponent<SpaceshipMainComponent>() != null && other.GetComponent<SpaceshipMainComponent>().Team != Team)
         {
             target = other.transform;
             sphereCollider.enabled = false;

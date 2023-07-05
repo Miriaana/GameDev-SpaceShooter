@@ -6,7 +6,7 @@ using UnityEngine;
 public class SpaceshipMovement : MonoBehaviour
 {
     public bool aiControlled = false;
-    [SerializeField] float baseMovementSpeed = 10f, curMovementSpeed = 10f, maxTurnAngle = 20f;
+    [SerializeField] float curMovementSpeed = 10f, maxTurnAngle = 20f;
     [SerializeField] GameObject collisionImpact;
     public SpaceshipMainComponent spaceshipMain;
     public float maxCarryingWeight = 100f, bumpTimer = 0f, explosionForceMod = 1000f;
