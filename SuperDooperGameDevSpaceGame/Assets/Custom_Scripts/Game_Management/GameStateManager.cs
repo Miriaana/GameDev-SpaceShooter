@@ -35,7 +35,8 @@ public class GameStateManager : MonoBehaviour
 
     public void StartGame()
     {
-
+        currentState = GameState.Playing;
+        FindObjectOfType<AsteroidSpawner>().StartSpawner();
     }
 
     public void RestartGame()
@@ -58,6 +59,10 @@ public class GameStateManager : MonoBehaviour
 
     public void AddSpaceshipToList(SpaceshipMainComponent newSpaceship)
     {
+        if(currentState != GameState.Playing) //todo: rem
+        {
+            StartGame();
+        }
         allControls.Add(newSpaceship);
     }
 

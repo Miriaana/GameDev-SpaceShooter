@@ -12,6 +12,12 @@ public class AsteroidSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //StartCoroutine("SpawnCo");
+    }
+
+    public void StartSpawner()
+    {
+        Debug.Log("Asteroid spawner started");
         StartCoroutine("SpawnCo");
     }
 
