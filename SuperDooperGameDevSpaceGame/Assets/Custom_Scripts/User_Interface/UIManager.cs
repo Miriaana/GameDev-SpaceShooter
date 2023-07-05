@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public int assignmentIndex = 0;
     //public float timeRemaining;
     public UIGameOver GameOverMenu;
+    public UIShipSelection SelectionMenu;
+    public GameObject GameOverlay;
 
     // Start is called before the first frame update
     void Start()
@@ -41,6 +43,31 @@ public class UIManager : MonoBehaviour
     {
         Debug.Log("Restarting Game");
         GameStateManager.Instance.RestartGame();
+    }
+
+    public void OpenSelectionScreen()
+    {
+        SelectionMenu.gameObject.SetActive(true);
+    }
+
+    public void StartGameOverlay()
+    {
+        SelectionMenu.gameObject.SetActive(false);
+        GameOverlay.gameObject.SetActive(true);
+        /*foreach(UIPlayer uiPlayer in uIPlayers) { 
+            uiPlayer.gameObject.SetActive(true);
+        }*/
+        //TimerText.gameObject.SetActive(true);
+    }
+
+    public void CloseGameOverlay()
+    {/*
+        foreach (UIPlayer uiPlayer in uIPlayers)
+        {
+            uiPlayer.gameObject.SetActive(false);
+        }*/
+        GameOverlay.gameObject.SetActive(false);
+        TimerText.gameObject.SetActive(false);
     }
 
     public void OpenGameOverMenu()

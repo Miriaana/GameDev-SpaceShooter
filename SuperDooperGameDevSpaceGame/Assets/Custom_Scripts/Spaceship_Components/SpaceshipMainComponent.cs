@@ -11,6 +11,7 @@ public class SpaceshipMainComponent : MonoBehaviour
     [SerializeField] Hull mainHull;
     public string playerName;
     public int score { get; set; }
+    public float health { get; set; } = 100f;
     public UIPlayer thisUiPlayer;
 
     private void Start()
@@ -22,6 +23,14 @@ public class SpaceshipMainComponent : MonoBehaviour
         //GetComponent<MeshFilter>().mesh = shipMesh[Random.Range(0, shipMesh.Length)];
         SetMaterial(UIManager.Instance.assignmentIndex);
         UIManager.Instance.assignmentIndex++;
+    }
+
+    public void InitPlayerUI()
+    {
+        Debug.Log("tried to init player UI");
+        //thisUiPlayer.gameObject.SetActive(true);
+        thisUiPlayer.SetName(playerName);
+        thisUiPlayer.SetHealthSlider(health);
     }
 
     public void SetMaterial(int index)

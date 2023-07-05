@@ -17,6 +17,10 @@ public class GameStateManager : MonoBehaviour
         {
             Instance = this;
         }
+        if (currentState != GameState.Playing)
+        {
+            //Time.timeScale = 0f;
+        }
     }
 
     private void Update()
@@ -37,6 +41,13 @@ public class GameStateManager : MonoBehaviour
     {
         currentState = GameState.Playing;
         FindObjectOfType<AsteroidSpawner>().StartSpawner();
+        UIManager.Instance.StartGameOverlay();
+        Time.timeScale = 1f;
+        /*
+        foreach(SpaceshipMainComponent ship in allControls)
+        {
+            ship.InitPlayerUI();
+        }*/
     }
 
     public void RestartGame()
@@ -59,11 +70,11 @@ public class GameStateManager : MonoBehaviour
 
     public void AddSpaceshipToList(SpaceshipMainComponent newSpaceship)
     {
-        if(currentState != GameState.Playing) //todo: rem
+        allControls.Add(newSpaceship);
+        /*if (currentState != GameState.Playing) //todo: rem
         {
             StartGame();
-        }
-        allControls.Add(newSpaceship);
+        }*/
     }
 
     public void RemoveSpaceshipFromList(SpaceshipMainComponent removedSpaceship)

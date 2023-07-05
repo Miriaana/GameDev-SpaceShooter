@@ -47,7 +47,7 @@ public class BeamProjectile : BaseDamagingProjectile
             hitLocation = transform.position + transform.forward * maxDistance;
         }
         Vector3 beamDirection = (hitLocation - origin.position).normalized;
-        Debug.Log(hitDistance);
+        //Debug.Log(hitDistance);
         beamEffect.transform.position = origin.position + beamDirection * hitDistance / 2f;
         beamEffect.transform.localScale = new Vector3(beamEffect.transform.localScale.x, beamEffect.transform.localScale.y, hitDistance / 10f);
     }
