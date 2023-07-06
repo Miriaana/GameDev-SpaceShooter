@@ -19,7 +19,7 @@ public class GameStateManager : MonoBehaviour
         }
         if (currentState != GameState.Playing)
         {
-            //Time.timeScale = 0f;
+            Time.timeScale = 0f;
         }
     }
 
@@ -39,6 +39,7 @@ public class GameStateManager : MonoBehaviour
 
     public void StartGame()
     {
+        Debug.Log("starting game");
         currentState = GameState.Playing;
         FindObjectOfType<AsteroidSpawner>().StartSpawner();
         UIManager.Instance.StartGameOverlay();
