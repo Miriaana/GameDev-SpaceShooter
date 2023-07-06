@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SpaceshipMainComponent : MonoBehaviour
 {
+    [SerializeField] private string spaceshipName;
     public int Team = 0;
     public Material[] usedMaterial;
     //public Mesh[] shipMesh;
@@ -11,7 +12,6 @@ public class SpaceshipMainComponent : MonoBehaviour
     [SerializeField] Hull mainHull;
     public string playerName;
     public int score { get; set; }
-    public float health { get; set; } = 100f;
     public UIPlayer thisUiPlayer;
 
     private void Start()
@@ -25,12 +25,9 @@ public class SpaceshipMainComponent : MonoBehaviour
         UIManager.Instance.assignmentIndex++;
     }
 
-    public void InitPlayerUI()
+    public SpaceshipStats GetSpaceShipInfo()
     {
-        Debug.Log("tried to init player UI");
-        //thisUiPlayer.gameObject.SetActive(true);
-        thisUiPlayer.SetName(playerName);
-        thisUiPlayer.SetHealthSlider(health);
+        return new SpaceshipStats(spaceshipName, Mathf.RoundToInt(mainHull.armor), primaryWeapons.WeaponName, Mathf.RoundToInt(primaryWeapons.GetWeaponDps()), secondaryWeapons.WeaponName, Mathf.RoundToInt(secondaryWeapons.GetWeaponDps()));
     }
 
     public void SetMaterial(int index)

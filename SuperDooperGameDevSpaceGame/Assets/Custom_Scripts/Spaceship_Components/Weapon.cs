@@ -7,7 +7,7 @@ public class Weapon : MonoBehaviour
 {
     public float weight = 1f;
     public int teamNumber = 0;
-    [SerializeField] float damage = 10f, shotsPerSecond = 1f;
+    public float damage = 10f, shotsPerSecond = 1f;
     [SerializeField, Range(0f, 1f)] float armorPenetration = 0f;
     [SerializeField] GameObject instantiatedProjectile;
     [SerializeField] Transform firePoint;

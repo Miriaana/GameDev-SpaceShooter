@@ -7,13 +7,15 @@ public class SpaceshipInputControls : MonoBehaviour
 {
     [SerializeField] SpaceshipMovement shipMovement;
     [SerializeField] GameObject [] spaceshipPrefab;
+    [SerializeField] UIShipSelection selectionUI;
     Vector2 moveInputs;
     bool primaryFire, secondaryFire;
 
     private void Start()
-    {
+    {/*
         shipMovement = Instantiate(spaceshipPrefab[Random.Range(0, spaceshipPrefab.Length)], transform.position, transform.rotation).GetComponent<SpaceshipMovement>();
-        GameStateManager.Instance.AddSpaceshipToList(shipMovement.gameObject.GetComponent<SpaceshipMainComponent>());
+        GameStateManager.Instance.AddSpaceshipToList(shipMovement.gameObject.GetComponent<SpaceshipMainComponent>());*/
+        selectionUI = FindObjectOfType<UIShipSelection>();
     }
 
     // Update is called once per frame
@@ -30,6 +32,10 @@ public class SpaceshipInputControls : MonoBehaviour
             {
                 shipMovement.spaceshipMain.FireSecondaryWeapons();
             }
+        }
+        if(selectionUI!= null)
+        {
+            selectionUI.SetIndex(Mathf.RoundToInt(moveInputs.x));
         }
     }
 

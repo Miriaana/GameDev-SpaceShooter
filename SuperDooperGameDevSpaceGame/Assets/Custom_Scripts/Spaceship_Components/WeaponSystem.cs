@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class WeaponSystem : MonoBehaviour
 {
+    public string WeaponName;
     public enum FireMode { Alternating, Simultaneously }
     [SerializeField] FireMode fireMode;
     [SerializeField] int curAmmo = 3;
@@ -13,6 +14,7 @@ public class WeaponSystem : MonoBehaviour
     bool limitedAmmoSwitch = false;
     float weaponTimer = 0f;
     int weaponIndex = 0;
+    
 
     private void Start()
     {
@@ -60,6 +62,13 @@ public class WeaponSystem : MonoBehaviour
                 }
             }
         }
+    }
+
+    public float GetWeaponDps()
+    {
+        int weaponCount = allWeapons.Length;
+        float singleWeaponDmg = allWeapons[0].damage;
+        return weaponCount* singleWeaponDmg;
     }
 
     void FireAlternating()

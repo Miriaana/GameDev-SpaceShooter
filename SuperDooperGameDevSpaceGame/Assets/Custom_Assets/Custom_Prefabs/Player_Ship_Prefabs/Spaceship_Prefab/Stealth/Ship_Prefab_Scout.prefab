@@ -77,6 +77,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -1263,6 +1264,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -2156,6 +2158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -2595,6 +2598,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: 
   fireMode: 0
   curAmmo: 3
   allWeapons:
@@ -3520,6 +3524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -3841,6 +3846,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: Beam Weapon
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -4599,6 +4605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -12723,6 +12730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: xxx
   fireMode: 1
   curAmmo: 3
   allWeapons:
@@ -18019,6 +18027,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: Laser 6
   fireMode: 0
   curAmmo: 3
   allWeapons:
@@ -18599,6 +18608,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: 
   fireMode: 0
   curAmmo: 3
   allWeapons:
@@ -18842,6 +18852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071964fcc6231f04e959236a8950664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spaceshipName: Stealty Boi
   Team: 0
   usedMaterial:
   - {fileID: 2100000, guid: ab823f976a5a91d428fd6069a1001472, type: 2}
@@ -18849,8 +18860,8 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 62b7fb13c3461a44b8f06b2f1b938c9c, type: 2}
   - {fileID: 2100000, guid: 22c632ed79df9524fa040925a0417fca, type: 2}
   primaryWeapons: {fileID: 1454547110449248427}
-  secondaryWeapons: {fileID: 1454547109353054742}
-  mainHull: {fileID: 0}
+  secondaryWeapons: {fileID: 1454547109472314923}
+  mainHull: {fileID: 1454547110562731139}
   playerName: 
   thisUiPlayer: {fileID: 0}
 --- !u!114 &1454547110562731139
@@ -19546,6 +19557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  WeaponName: 
   fireMode: 0
   curAmmo: 3
   allWeapons:

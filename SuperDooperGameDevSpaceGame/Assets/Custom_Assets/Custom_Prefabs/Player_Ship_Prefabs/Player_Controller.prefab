@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6105370056844601495}
   - component: {fileID: 854139501904378277}
   m_Layer: 0
-  m_Name: Player_Spaceship_Controller
+  m_Name: Player_Controller
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
