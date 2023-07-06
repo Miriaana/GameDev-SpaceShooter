@@ -7,11 +7,12 @@ using TMPro;
 public class GameStateManager : MonoBehaviour
 {
     public static GameStateManager Instance;
-    public enum GameState { Starting, Selection, Countdown, Playing, End }
-    [SerializeField] private GameState currentState;
-    [SerializeField] List<SpaceshipMainComponent> allSpaceships;
+    public enum GameState { Starting, Selection, Countdown, Playing, Bossfight, End }
+    public GameState currentState;
+    [SerializeField] BossMainControls bossControls;
     [SerializeField] float timeRemaining = 30f;
     [SerializeField] TextMeshProUGUI countDownText;
+    [SerializeField] AsteroidSpawner astSpawner;
 
     private void Start()
     {
@@ -31,17 +32,26 @@ public class GameStateManager : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             timeRemaining = Mathf.Clamp(timeRemaining, 0f, 100000000f);
-            UIManager.Instance.UpdateTimerText(string.Format("{0:N2}", timeRemaining));
+            if(timeRemaining > 0)
+            {
+                UIManager.Instance.UpdateTimerText(string.Format("{0:N2}", timeRemaining));
+            }
+            else
+            {
+                UIManager.Instance.TimerText.gameObject.SetActive(false);
+                UIManager.Instance.TimerTitle.gameObject.SetActive(false);
+            }
         }
         else if(currentState == GameState.Playing)
         {
-            EndGame();
+            currentState = GameState.Bossfight;
+            astSpawner.StopSpawner();
+            bossControls.gameObject.SetActive(true);
         }
     }
 
     public void StartGame()
     {
-        Debug.Log("StartCalled");
         if(PlayerControlInstanceManager.Instance.CheckGlobalConfirmationState())
         {
             if(currentState == GameState.Selection)
@@ -69,7 +79,6 @@ public class GameStateManager : MonoBehaviour
 
     IEnumerator StartGameCo()
     {
-        Debug.Log("Starting The Game");
         currentState = GameState.Countdown;
         countDownText.text = "Starting in...";
         yield return new WaitForSeconds(1f);
@@ -85,7 +94,7 @@ public class GameStateManager : MonoBehaviour
         //Actually Starting The Game
         currentState = GameState.Playing;
         PlayerControlInstanceManager.Instance.InstantiateSpaceships();
-        FindObjectOfType<AsteroidSpawner>().StartSpawner();
+        astSpawner.StartSpawner();
         UIManager.Instance.StartGameOverlay();
         CameraMovement.Instance.SetNewPosition(CameraMovement.ViewPoint.BattleView);
     }
@@ -96,25 +105,30 @@ public class GameStateManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
+    public void CheckAllPlayerHealth()
+    {
+        for (int i = 0; i < PlayerControlInstanceManager.Instance.allInputs.Count; i++)
+        {
+            if (PlayerControlInstanceManager.Instance.allInputs[i].shipMain.mainHull.curHealth > 0)
+            {
+                return;
+            }
+        }
+        EndGame();
+    }
+
     public void EndGame()
     {
         currentState = GameState.End;
         Time.timeScale = 0f;
-        UIManager.Instance.GameOverMenu.ShowScores(allSpaceships);
+        List<SpaceshipMainComponent> allShips = new List<SpaceshipMainComponent>();
+        foreach(SpaceshipInputControls control in PlayerControlInstanceManager.Instance.allInputs)
+        {
+            allShips.Add(control.shipMain);
+        }
+        UIManager.Instance.GameOverMenu.ShowScores(allShips);
         UIManager.Instance.OpenGameOverMenu();
     }
 
-    public void AddSpaceshipToList(SpaceshipMainComponent newSpaceship)
-    {
-        allSpaceships.Add(newSpaceship);
-    }
-
-    public void RemoveSpaceshipFromList(SpaceshipMainComponent removedSpaceship)
-    {
-        allSpaceships.Remove(removedSpaceship);
-        if(allSpaceships.Count == 0 && currentState == GameState.Playing)
-        {
-            EndGame();
-        }
-    }
+    
 }

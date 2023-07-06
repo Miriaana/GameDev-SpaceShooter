@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class SpaceshipMainComponent : MonoBehaviour
 {
     [SerializeField] private string spaceshipName;
     [SerializeField] WeaponSystem primaryWeapons, secondaryWeapons;
-    [SerializeField] Hull mainHull;
+    public Hull mainHull;
     public int Team = 0;
     public Material[] usedMaterial;
     public SpaceshipMovement ShipMovement;
@@ -29,6 +30,10 @@ public class SpaceshipMainComponent : MonoBehaviour
     {
         thisUiPlayer.UpdateScore(score);
         thisUiPlayer.UpdateAmmo(secondaryWeapons.curAmmo, ammoCharge);
+        if(GameStateManager.Instance.currentState == GameStateManager.GameState.Bossfight)
+        {
+            AddAmmoCharge(Time.deltaTime * 0.5f);
+        }
     }
 
     public void MoveShip(Vector2 direction)
@@ -77,10 +82,5 @@ public class SpaceshipMainComponent : MonoBehaviour
     public void SetSecondaryWeaponSystemTo(WeaponSystem weaponSystem)
     {
         secondaryWeapons = weaponSystem;
-    }
-
-    public void OnDestroy()
-    {
-        GameStateManager.Instance.RemoveSpaceshipFromList(this);
     }
 }

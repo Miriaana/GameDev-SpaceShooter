@@ -7,6 +7,8 @@ using UnityEngine;
 public class DestroyableObject : MonoBehaviour
 {
     public int teamNumber = 0;
+    public bool DestroyOnDeath = true;
+    public bool Immortal = false;
     [SerializeField] float objectSize = 1f;
     [SerializeField] GameObject[] instantiatedDebris;
     bool hasBeenDestroyed = false;
@@ -19,16 +21,19 @@ public class DestroyableObject : MonoBehaviour
 
     public virtual void DamageHull(float takenDamage, float armorPen = 0f, SpaceshipMainComponent associatedShip = null)
     {
-        float healthBefore = compHull.curHealth;
-        float healthAfter = compHull.TakeDamage(takenDamage, armorPen);
-        if(associatedShip != null )
+        if(!Immortal)
         {
-            associatedShip.score += Mathf.RoundToInt(Mathf.Clamp(healthBefore - healthAfter, 0f, float.MaxValue));
-        }
-        if (healthAfter <= 0 && !hasBeenDestroyed)
-        {
-            hasBeenDestroyed = true;
-            DestroyThis();
+            float healthBefore = compHull.curHealth;
+            float healthAfter = compHull.TakeDamage(takenDamage, armorPen);
+            if (associatedShip != null)
+            {
+                associatedShip.score += Mathf.RoundToInt(Mathf.Clamp(healthBefore - healthAfter, 0f, float.MaxValue));
+            }
+            if (healthAfter <= 0 && !hasBeenDestroyed)
+            {
+                hasBeenDestroyed = true;
+                DestroyThis();
+            }
         }
     }
 
@@ -43,7 +48,14 @@ public class DestroyableObject : MonoBehaviour
                 inst.GetComponent<Asteroid>().RandomizeDirection();
             }
         }
-        Destroy(gameObject);
+        if(DestroyOnDeath)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            GameStateManager.Instance.CheckAllPlayerHealth();
+        }
     }
 
     public float GetMaxHealth()

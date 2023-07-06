@@ -14,6 +14,11 @@ public class AsteroidSpawner : MonoBehaviour
         StartCoroutine("SpawnCo");
     }
 
+    public void StopSpawner()
+    {
+        StopCoroutine("SpawnCo");
+    }
+
     public void SpawnAsteroid()
     {
         Vector3 spawnPosition = new Vector3(Random.Range(leftBorder.position.x, rightBorder.position.x), 0f, transform.position.z);

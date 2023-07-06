@@ -33,7 +33,23 @@ public class Turret : MonoBehaviour
             }
             else
             {
-                sphereCollider.enabled = true;
+                if(Team == 0)
+                {
+                    sphereCollider.enabled = true;
+                }
+                else
+                {
+                    SpaceshipMainComponent newMain = PlayerControlInstanceManager.Instance.allInputs[Random.Range(0, PlayerControlInstanceManager.Instance.allInputs.Count)].shipMain;
+                    if(newMain.mainHull.curHealth > 0)
+                    {
+                        target = newMain.transform;
+                    }
+                    else
+                    {
+                        target = null;
+                    }
+
+                }
                 inactiveTimer = inactiveToleranceTime;
             }
         }

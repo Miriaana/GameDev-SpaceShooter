@@ -7,25 +7,35 @@ public class BossMainControls : MonoBehaviour
     [SerializeField] Turret[] laserTurrets, rocketTurrets;
     [SerializeField] BossHealthBar healthBar;
     [SerializeField] DestroyableObject destroyableObject;
-    bool active = false;
+    public float maxHealth = 1000f;
 
     // Start is called before the first frame update
     void Start()
     {
-        destroyableObject = GetComponent<DestroyableObject>();
+        destroyableObject = GetComponentInChildren<DestroyableObject>();
+        int difficulty = PlayerControlInstanceManager.Instance.allInputs.Count;
+        GetComponentInChildren<Hull>().maxHealth = maxHealth * difficulty;
+        GetComponentInChildren<Hull>().curHealth = maxHealth * difficulty;
         healthBar.InitializeSlider(destroyableObject.GetMaxHealth());
-        StartBossFight();//Remove This!!!
     }
 
     // Update is called once per frame
     void Update()
     {
         healthBar.SetRedSliderValues(destroyableObject.GetCurHealth());
+        if(destroyableObject.GetCurHealth() < destroyableObject.GetMaxHealth() / 2)
+        {
+            ToggleRocketTurrets(true);
+        }
+        if(destroyableObject.GetCurHealth() <= 0)
+        {
+            GameStateManager.Instance.EndGame();
+        }
     }
 
     public void StartBossFight()
     {
-        active = true;
+        destroyableObject.Immortal = false;
         ToggleLaserTurrets(true);
     }
 

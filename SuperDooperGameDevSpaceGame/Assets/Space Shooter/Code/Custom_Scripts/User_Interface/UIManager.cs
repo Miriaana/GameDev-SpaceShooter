@@ -8,9 +8,8 @@ public class UIManager : MonoBehaviour
     public static UIManager Instance;
     public UIPlayer[] uIPlayers;
     public string[] Playernames = { "Blue", "Green", "Yellow", "Purple" };
-    public TextMeshProUGUI TimerText;
+    public TextMeshProUGUI TimerText, TimerTitle;
     public int assignmentIndex = 0;
-    //public float timeRemaining;
     public UIGameOver GameOverMenu;
     public GameObject SelectionMenu;
     public GameObject GameOverlay;
@@ -52,6 +51,10 @@ public class UIManager : MonoBehaviour
     public void StartGameOverlay()
     {
         SelectionMenu.SetActive(false);
+        for (int i = 0; i < PlayerControlInstanceManager.Instance.allInputs.Count; i++)
+        {
+            uIPlayers[i].gameObject.SetActive(true);
+        }
         GameOverlay.SetActive(true);
     }
 

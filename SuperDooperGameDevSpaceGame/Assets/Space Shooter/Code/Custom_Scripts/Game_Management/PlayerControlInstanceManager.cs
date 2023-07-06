@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerControlInstanceManager : MonoBehaviour
 {
     public static PlayerControlInstanceManager Instance;
-    List<SpaceshipInputControls> allInputs = new List<SpaceshipInputControls>();
+    public List<SpaceshipInputControls> allInputs = new List<SpaceshipInputControls>();
     [SerializeField] UIShipSelection[] selectionUI;
 
     // Start is called before the first frame update

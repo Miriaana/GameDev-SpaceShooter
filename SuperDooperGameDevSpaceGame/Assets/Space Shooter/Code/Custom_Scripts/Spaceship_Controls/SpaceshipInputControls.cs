@@ -21,16 +21,23 @@ public class SpaceshipInputControls : MonoBehaviour
     {
         if(shipMain != null)
         {
-            shipMain.MoveShip(moveInputs);
-            if (primaryFire)
+            if(shipMain.mainHull.curHealth > 0)
             {
-                shipMain.FirePrimaryWeapons();
+                shipMain.MoveShip(moveInputs);
+                if (primaryFire)
+                {
+                    shipMain.FirePrimaryWeapons();
+                }
+                if (secondaryFire)
+                {
+                    shipMain.FireSecondaryWeapons();
+                }
+                totalPlayerScore = shipMain.score;
             }
-            if (secondaryFire)
+            else
             {
-                shipMain.FireSecondaryWeapons();
+                shipMain.transform.position = new Vector3(1500f, 0f, 1500f);
             }
-            totalPlayerScore = shipMain.score;
         }
         if(selectionUI != null)
         {

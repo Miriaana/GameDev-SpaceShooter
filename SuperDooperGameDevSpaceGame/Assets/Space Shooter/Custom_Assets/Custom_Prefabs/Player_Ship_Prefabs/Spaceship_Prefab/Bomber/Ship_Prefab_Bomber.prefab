@@ -4198,6 +4198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNumber: 0
+  DestroyOnDeath: 0
   objectSize: 1
   instantiatedDebris: []
 --- !u!1 &1606366873866210405

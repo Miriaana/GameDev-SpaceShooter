@@ -15486,7 +15486,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNumber: 0
-  damage: 50
+  damage: 75
   shotsPerSecond: 1
   armorPenetration: 0.75
   instantiatedProjectile: {fileID: 6762069310680895360, guid: 125ff698a2dea8441b8f65ef01da469a, type: 3}
@@ -16153,7 +16153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNumber: 0
-  damage: 50
+  damage: 75
   shotsPerSecond: 1
   armorPenetration: 0.75
   instantiatedProjectile: {fileID: 6762069310680895360, guid: 125ff698a2dea8441b8f65ef01da469a, type: 3}
@@ -16847,6 +16847,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNumber: 0
+  DestroyOnDeath: 0
+  Immortal: 0
   objectSize: 1
   instantiatedDebris: []
 --- !u!1 &7536462957985875113

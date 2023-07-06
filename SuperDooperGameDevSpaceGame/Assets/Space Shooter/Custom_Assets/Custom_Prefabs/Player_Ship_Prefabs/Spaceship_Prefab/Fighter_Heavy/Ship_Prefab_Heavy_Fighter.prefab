@@ -5920,7 +5920,7 @@ MonoBehaviour:
   teamNumber: 0
   damage: 25
   shotsPerSecond: 0.33
-  armorPenetration: 0
+  armorPenetration: 0.5
   instantiatedProjectile: {fileID: 3631492879345218813, guid: a8df3fc4747aaf84f9970eaea75df983, type: 3}
   firePoint: {fileID: 7641616637929639679}
   missFireDegrees: 0.1
@@ -6239,7 +6239,7 @@ MonoBehaviour:
   teamNumber: 0
   damage: 25
   shotsPerSecond: 0.33
-  armorPenetration: 0
+  armorPenetration: 0.5
   instantiatedProjectile: {fileID: 3631492879345218813, guid: a8df3fc4747aaf84f9970eaea75df983, type: 3}
   firePoint: {fileID: 7641616638342423984}
   missFireDegrees: 0.1
@@ -18821,6 +18821,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   teamNumber: 0
+  DestroyOnDeath: 0
+  Immortal: 0
   objectSize: 1
   instantiatedDebris: []
 --- !u!1 &7641616638323392937

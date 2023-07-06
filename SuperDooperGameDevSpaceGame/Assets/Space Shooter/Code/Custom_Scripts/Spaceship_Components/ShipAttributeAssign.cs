@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class ShipAttributeAssign : MonoBehaviour
 {
-    [SerializeField] WeaponSwitcher primaryWeaponSwitcher, secondaryWeaponSwitcher;
-    [SerializeField] Hull hull;
-    [SerializeField] SpaceshipMovement shipMovement;
-    int primaryWeaponIndex = 0, secondaryWeaponIndex = 0;
+    //[SerializeField] WeaponSwitcher primaryWeaponSwitcher, secondaryWeaponSwitcher;
+    //[SerializeField] Hull hull;
+    //[SerializeField] SpaceshipMovement shipMovement;
+    //int primaryWeaponIndex = 0, secondaryWeaponIndex = 0;
 
     /*public void SwapPrimaryWeapon(int direction)
     {
