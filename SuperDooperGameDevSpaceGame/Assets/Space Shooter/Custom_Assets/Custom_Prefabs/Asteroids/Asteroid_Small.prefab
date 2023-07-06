@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5688305513572143989}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9790993, y: 0, z: 94.3}
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 1
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 50
   curHealth: 50
-  armor: 5
+  armor: 100
 --- !u!114 &5406992202709852617
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,7 +164,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 20
-  changeFrequency: 0.5
   directionRandomizer: 0
   rotationSpeeds: {x: 100, y: 100, z: 100}
   collisionInst: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}

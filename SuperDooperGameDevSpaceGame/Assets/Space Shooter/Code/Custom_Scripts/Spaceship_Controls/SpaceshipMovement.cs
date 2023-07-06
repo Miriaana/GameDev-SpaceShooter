@@ -5,11 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(SpaceshipMainComponent))]
 public class SpaceshipMovement : MonoBehaviour
 {
-    public bool aiControlled = false;
-    [SerializeField] float curMovementSpeed = 10f, maxTurnAngle = 20f;
+    [SerializeField] float maxTurnAngle = 20f;
     [SerializeField] GameObject collisionImpact;
-    public SpaceshipMainComponent spaceshipMain;
-    public float maxCarryingWeight = 100f, bumpTimer = 0f, explosionForceMod = 1000f;
+    public float curMovementSpeed = 10f, bumpTimer = 0f, explosionForceMod = 1000f;
     Rigidbody body;
 
     private void Start()
@@ -19,23 +17,16 @@ public class SpaceshipMovement : MonoBehaviour
 
     public void MoveShip(Vector3 newDir)
     {
-        if (!aiControlled)
+        if (transform.position.x < -120f && newDir.x < 0f || transform.position.x > 120f && newDir.x > 0f)
         {
-            if (transform.position.x < -120f && newDir.x < 0f || transform.position.x > 120f && newDir.x > 0f)
-            {
-                newDir.x = 0f;
-            }
-            if (transform.position.z > 30f && newDir.z > 0f || transform.position.z < -65f && newDir.z < 0f)
-            {
-                newDir.z = 0f;
-            }
+            newDir.x = 0f;
         }
-        else
+        if (transform.position.z > 30f && newDir.z > 0f || transform.position.z < -65f && newDir.z < 0f)
         {
-            newDir = -Vector3.forward;
+            newDir.z = 0f;
         }
         //
-        if(body != null && bumpTimer == 0)
+        if (body != null && bumpTimer == 0)
         {
             body.velocity = newDir;
             body.angularVelocity = Vector3.zero;

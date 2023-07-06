@@ -10,35 +10,27 @@ public class UIPlayer : MonoBehaviour
     public TextMeshProUGUI ScoreText;
     public TextMeshProUGUI NameText;
     public TextMeshProUGUI AmmoText;
-    [SerializeField] Slider healthSlider;
-
-    private int score;
+    [SerializeField] Slider healthSlider, ammoSlider;
     private int ammo;
     
     // Start is called before the first frame update
     void Start()
     {
-        UpdateScore(0);
-        AddAmmo(3);
+        UpdateScore();
+        UpdateAmmo();
         healthSlider.maxValue = 100f;
+        healthSlider.value = healthSlider.maxValue;
     }
 
-    public void UpdateScore(int num)
+    public void UpdateScore(int newScore = 0)
     {
-        score += num;
-        ScoreText.text = "Score: " + score;
+        ScoreText.text = "" + newScore;
     }
 
-    public void AddAmmo(int num)
+    public void UpdateAmmo(int ammoCount = 0, float slidingValue = 0)
     {
-        ammo += num;
-        AmmoText.text = "Ammo: " + "Ready";
-    }
-
-    public void SubAmmo(int num)
-    {
-        ammo -= num;
-        AmmoText.text = "Ammo: " + "Empty";
+        AmmoText.text = "" + ammoCount;
+        ammoSlider.value = slidingValue;
     }
 
     public int CheckAmmo()

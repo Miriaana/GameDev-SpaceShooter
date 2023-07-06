@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class BaseDamagingProjectile : MonoBehaviour
 {
+    public SpaceshipMainComponent associatedShip;
     [SerializeField] protected float moveSpeed = 30f; 
     [SerializeField] protected GameObject hitPrefab;
     [SerializeField] protected AudioClip spawnSound, deathSound;
@@ -31,18 +32,19 @@ public class BaseDamagingProjectile : MonoBehaviour
         body.velocity = transform.forward * moveSpeed;
     }
 
-    public virtual void SetStats(int newTeamNumber, float newDamage, float newArmorPenetration, Transform originTransform)
+    public virtual void SetStats(int newTeamNumber, float newDamage, float newArmorPenetration, Transform originTransform, SpaceshipMainComponent shipMain = null)
     {
         teamNumber = newTeamNumber;
         damage = newDamage;
         armorPenetrationRatio = newArmorPenetration;
+        associatedShip = shipMain;
     }
 
     public void OnTriggerEnter(Collider other)
     {
         if(other.GetComponent<DestroyableObject>() != null && other.GetComponent<DestroyableObject>().teamNumber != teamNumber)
         {
-            other.GetComponent<DestroyableObject>().DamageHull(damage, armorPenetrationRatio);
+            other.GetComponent<DestroyableObject>().DamageHull(damage, armorPenetrationRatio, associatedShip);
             if(hitPrefab != null)
             {
                 Instantiate(hitPrefab, transform.position, transform.rotation);

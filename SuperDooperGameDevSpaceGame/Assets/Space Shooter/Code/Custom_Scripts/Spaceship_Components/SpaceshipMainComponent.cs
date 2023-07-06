@@ -5,14 +5,15 @@ using UnityEngine;
 public class SpaceshipMainComponent : MonoBehaviour
 {
     [SerializeField] private string spaceshipName;
-    public int Team = 0;
-    public Material[] usedMaterial;
-    //public Mesh[] shipMesh;
     [SerializeField] WeaponSystem primaryWeapons, secondaryWeapons;
     [SerializeField] Hull mainHull;
+    public int Team = 0;
+    public Material[] usedMaterial;
+    public SpaceshipMovement ShipMovement;
     public string playerName;
-    public int score { get; set; }
+    public int score;
     public UIPlayer thisUiPlayer;
+    float ammoCharge = 0f;
 
     private void Start()
     {
@@ -20,14 +21,24 @@ public class SpaceshipMainComponent : MonoBehaviour
         playerName = $"{UIManager.Instance.Playernames[UIManager.Instance.assignmentIndex]}";
         thisUiPlayer.SetName(playerName);
         thisUiPlayer.SetHealthSlider(100f);
-        //GetComponent<MeshFilter>().mesh = shipMesh[Random.Range(0, shipMesh.Length)];
         SetMaterial(UIManager.Instance.assignmentIndex);
         UIManager.Instance.assignmentIndex++;
     }
 
+    private void Update()
+    {
+        thisUiPlayer.UpdateScore(score);
+        thisUiPlayer.UpdateAmmo(secondaryWeapons.curAmmo, ammoCharge);
+    }
+
+    public void MoveShip(Vector2 direction)
+    {
+        ShipMovement.MoveShip(ShipMovement.SteerHor(direction.x) + ShipMovement.SteerVert(direction.y));
+    }
+
     public SpaceshipStats GetSpaceShipInfo()
     {
-        return new SpaceshipStats(spaceshipName, Mathf.RoundToInt(mainHull.armor), primaryWeapons.WeaponName, Mathf.RoundToInt(primaryWeapons.GetWeaponDps()), secondaryWeapons.WeaponName, Mathf.RoundToInt(secondaryWeapons.GetWeaponDps()));
+        return new SpaceshipStats(spaceshipName, ShipMovement.curMovementSpeed, Mathf.RoundToInt(mainHull.armor), primaryWeapons.WeaponName, Mathf.RoundToInt(primaryWeapons.GetWeaponDps()), secondaryWeapons.WeaponName);
     }
 
     public void SetMaterial(int index)
@@ -37,15 +48,24 @@ public class SpaceshipMainComponent : MonoBehaviour
 
     public void FirePrimaryWeapons()
     {
-        primaryWeapons.Fire();
+        primaryWeapons.Fire(this);
     }
 
     public void FireSecondaryWeapons()
     {
-        if (thisUiPlayer.CheckAmmo() > 0)
+        if (secondaryWeapons.curAmmo > 0)
         {
-            secondaryWeapons.Fire();
-            thisUiPlayer.SubAmmo(1);
+            secondaryWeapons.Fire(this);
+        }
+    }
+
+    public void AddAmmoCharge(float amount)
+    {
+        ammoCharge += amount;
+        if(ammoCharge >= 5)
+        {
+            ammoCharge -= 5;
+            secondaryWeapons.curAmmo++;
         }
     }
 

@@ -11,7 +11,7 @@ public class BeamProjectile : BaseDamagingProjectile
     DestroyOverTime lifeObject;
     Vector3 hitLocation;
 
-    public override void SetStats(int newTeamNumber, float newDamage, float newArmorPenetration, Transform originTransform)
+    public override void SetStats(int newTeamNumber, float newDamage, float newArmorPenetration, Transform originTransform, SpaceshipMainComponent shipMain = null)
     {
         base.SetStats(newTeamNumber, newDamage, newArmorPenetration, originTransform);
         origin = originTransform;

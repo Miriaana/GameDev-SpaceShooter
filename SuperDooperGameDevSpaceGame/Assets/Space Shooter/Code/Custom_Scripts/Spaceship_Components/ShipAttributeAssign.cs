@@ -35,15 +35,5 @@ public class ShipAttributeAssign : MonoBehaviour
         secondaryWeaponSwitcher.SetCurrentWeaponSystem(secondaryWeaponIndex);
     }*/
 
-    public void SwapArmorClass(int direction)
-    {
-
-    }
-
-    public void CheckShipStats()
-    {
-        float weaponWeightPrim = primaryWeaponSwitcher.allWeaponSystems[primaryWeaponSwitcher.weaponIndex].allWeapons[0].weight * primaryWeaponSwitcher.allWeaponSystems[primaryWeaponSwitcher.weaponIndex].allWeapons.Length;
-        float weaponWeightSeco = secondaryWeaponSwitcher.allWeaponSystems[secondaryWeaponSwitcher.weaponIndex].allWeapons[0].weight * secondaryWeaponSwitcher.allWeaponSystems[secondaryWeaponSwitcher.weaponIndex].allWeapons.Length;
-
-    }
+   
 }

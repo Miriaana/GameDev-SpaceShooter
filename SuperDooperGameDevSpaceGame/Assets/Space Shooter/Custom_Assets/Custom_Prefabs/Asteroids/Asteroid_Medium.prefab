@@ -30,7 +30,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2758526027448558945}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.9790993, y: 0, z: 94.3}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 1
@@ -133,8 +133,8 @@ MonoBehaviour:
   teamNumber: 1
   objectSize: 10
   instantiatedDebris:
-  - {fileID: 5688305513572143989, guid: b313e825da25a4f4794a7d2666331d06, type: 3}
-  - {fileID: 5688305513572143989, guid: b313e825da25a4f4794a7d2666331d06, type: 3}
+  - {fileID: 628923975390309697, guid: 7f4922c5653210040a59c2fdad87d595, type: 3}
+  - {fileID: 628923975390309697, guid: 7f4922c5653210040a59c2fdad87d595, type: 3}
 --- !u!114 &2759852631869816344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   curHealth: 100
-  armor: 100
+  armor: 250
 --- !u!114 &2759852631869816351
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  changeFrequency: 0.5
   directionRandomizer: 0
   rotationSpeeds: {x: 50, y: 50, z: 50}
   collisionInst: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}

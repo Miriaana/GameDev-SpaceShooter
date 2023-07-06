@@ -358,7 +358,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 5
   teamNumber: 0
   damage: 30
   shotsPerSecond: 1
@@ -874,7 +873,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 75
   shotsPerSecond: 1
@@ -1208,7 +1206,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 5
   teamNumber: 0
   damage: 30
   shotsPerSecond: 1
@@ -1468,7 +1465,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 75
   shotsPerSecond: 0.33
@@ -1705,7 +1701,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 3
   teamNumber: 0
   damage: 10
   shotsPerSecond: 6
@@ -2361,7 +2356,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 3
   teamNumber: 0
   damage: 10
   shotsPerSecond: 6
@@ -2802,7 +2796,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 3
   teamNumber: 0
   damage: 10
   shotsPerSecond: 6
@@ -3370,7 +3363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 2
   teamNumber: 0
   damage: 10
   shotsPerSecond: 3
@@ -3728,7 +3720,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 25
   shotsPerSecond: 1
@@ -3846,14 +3837,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: Beam Weapon
+  WeaponName: Beam Cannon
   fireMode: 1
-  curAmmo: 3
+  curAmmo: 1
   allWeapons:
   - {fileID: 1454547110150758669}
   - {fileID: 1454547109578203413}
   fireRatePerSecond: 0.25
-  limitedAmmo: 0
+  limitedAmmo: 1
 --- !u!1 &1454547109479545827
 GameObject:
   m_ObjectHideFlags: 0
@@ -4300,7 +4291,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 50
   shotsPerSecond: 0.33
@@ -4938,7 +4928,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 2
   teamNumber: 0
   damage: 10
   shotsPerSecond: 3
@@ -5143,7 +5132,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 10
   shotsPerSecond: 1
@@ -5349,7 +5337,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 10
   shotsPerSecond: 2
@@ -5555,7 +5542,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 25
   shotsPerSecond: 0.33
@@ -6252,7 +6238,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 10
   shotsPerSecond: 2
@@ -6458,7 +6443,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 150
   shotsPerSecond: 1
@@ -11817,7 +11801,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 50
   shotsPerSecond: 0.33
@@ -12674,7 +12657,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 75
   shotsPerSecond: 0.33
@@ -12934,7 +12916,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 25
   shotsPerSecond: 1
@@ -18027,7 +18008,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b585f28fcbe8f374da1f1e1d74b0134f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  WeaponName: Laser 6
+  WeaponName: Rapid Lasers
   fireMode: 0
   curAmmo: 3
   allWeapons:
@@ -18232,7 +18213,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 25
   shotsPerSecond: 0.33
@@ -18438,7 +18418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 75
   shotsPerSecond: 1
@@ -18712,8 +18691,8 @@ GameObject:
   - component: {fileID: 1454547110562731150}
   - component: {fileID: 1454547110562731151}
   - component: {fileID: 1454547110562731148}
-  - component: {fileID: 1454547110562731149}
   - component: {fileID: 1454547110562731138}
+  - component: {fileID: 1454547110562731149}
   - component: {fileID: 1454547110562731139}
   - component: {fileID: 1454547110562731136}
   m_Layer: 0
@@ -18820,26 +18799,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1454547110562731149
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1454547110562731137}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3ece5aeb58c6fc14782e74f29b51c9c1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  aiControlled: 0
-  curMovementSpeed: 60
-  maxTurnAngle: 7
-  collisionImpact: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}
-  spaceshipMain: {fileID: 1454547110562731138}
-  maxCarryingWeight: 100
-  bumpTimer: 0
-  explosionForceMod: 5000
 --- !u!114 &1454547110562731138
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18852,18 +18811,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 071964fcc6231f04e959236a8950664c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spaceshipName: Stealty Boi
+  spaceshipName: Scout
+  primaryWeapons: {fileID: 1454547110449248427}
+  secondaryWeapons: {fileID: 1454547109472314923}
+  mainHull: {fileID: 1454547110562731139}
   Team: 0
   usedMaterial:
   - {fileID: 2100000, guid: ab823f976a5a91d428fd6069a1001472, type: 2}
   - {fileID: 2100000, guid: 07e9ba6626dbab3438d72404d6891d2a, type: 2}
   - {fileID: 2100000, guid: 62b7fb13c3461a44b8f06b2f1b938c9c, type: 2}
   - {fileID: 2100000, guid: 22c632ed79df9524fa040925a0417fca, type: 2}
-  primaryWeapons: {fileID: 1454547110449248427}
-  secondaryWeapons: {fileID: 1454547109472314923}
-  mainHull: {fileID: 1454547110562731139}
+  ShipMovement: {fileID: 1454547110562731149}
   playerName: 
+  score: 0
   thisUiPlayer: {fileID: 0}
+--- !u!114 &1454547110562731149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1454547110562731137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ece5aeb58c6fc14782e74f29b51c9c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxTurnAngle: 7
+  collisionImpact: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}
+  curMovementSpeed: 60
+  bumpTimer: 0
+  explosionForceMod: 5000
 --- !u!114 &1454547110562731139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18878,7 +18856,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   curHealth: 100
-  armor: 75
+  armor: 50
 --- !u!114 &1454547110562731136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19271,7 +19249,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe6e745c6d0ba4e448e1fe77f78676f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weight: 1
   teamNumber: 0
   damage: 150
   shotsPerSecond: 1

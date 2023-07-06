@@ -5,37 +5,44 @@ using UnityEngine.InputSystem;
 
 public class SpaceshipInputControls : MonoBehaviour
 {
-    [SerializeField] SpaceshipMovement shipMovement;
-    [SerializeField] GameObject [] spaceshipPrefab;
-    [SerializeField] UIShipSelection selectionUI;
+    public SpaceshipMainComponent shipMain;
+    public UIShipSelection selectionUI;
+    public int totalPlayerScore = 0;
     Vector2 moveInputs;
     bool primaryFire, secondaryFire;
 
     private void Start()
-    {/*
-        shipMovement = Instantiate(spaceshipPrefab[Random.Range(0, spaceshipPrefab.Length)], transform.position, transform.rotation).GetComponent<SpaceshipMovement>();
-        GameStateManager.Instance.AddSpaceshipToList(shipMovement.gameObject.GetComponent<SpaceshipMainComponent>());*/
-        selectionUI = FindObjectOfType<UIShipSelection>();
+    {
+        PlayerControlInstanceManager.Instance.AddInputToList(this);
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(shipMovement != null && !shipMovement.aiControlled)
+        if(shipMain != null)
         {
-            shipMovement.MoveShip(shipMovement.SteerHor(moveInputs.x) + shipMovement.SteerVert(moveInputs.y));
+            shipMain.MoveShip(moveInputs);
             if (primaryFire)
             {
-                shipMovement.spaceshipMain.FirePrimaryWeapons();
+                shipMain.FirePrimaryWeapons();
             }
             if (secondaryFire)
             {
-                shipMovement.spaceshipMain.FireSecondaryWeapons();
+                shipMain.FireSecondaryWeapons();
             }
+            totalPlayerScore = shipMain.score;
         }
-        if(selectionUI!= null)
+        if(selectionUI != null)
         {
             selectionUI.SetIndex(Mathf.RoundToInt(moveInputs.x));
+            if(primaryFire)
+            {
+                selectionUI.ConfirmSelection(true);
+            }
+            else if(secondaryFire)
+            {
+                selectionUI.ConfirmSelection(false);
+            }
         }
     }
 

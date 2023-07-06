@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7716295847740938701}
   - component: {fileID: 7729337637215886547}
   - component: {fileID: 6020691092184200467}
-  - component: {fileID: -5382073035513220204}
+  - component: {fileID: -1592441194574627706}
   m_Layer: 0
   m_Name: Ammo Collectable
   m_TagString: Untagged
@@ -116,7 +116,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.7275106, y: 0.49477386, z: 0.6727113}
   m_Center: {x: 0.00000011920929, y: 0.24738693, z: 0}
---- !u!114 &-5382073035513220204
+--- !u!114 &-1592441194574627706
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -125,11 +125,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7728481902777875411}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 594255f9bca9c604f94b3a9870517319, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e08eac4bdfa5e5469f46925c6bc4351, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointsToScore: 1
-  moveSpeed: 5
+  pointsToScore: 50
+  ammoChargeIncrease: 3
+  moveSpeed: 7
 --- !u!1 &7728539093541552105
 GameObject:
   m_ObjectHideFlags: 0

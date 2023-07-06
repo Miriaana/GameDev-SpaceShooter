@@ -70,7 +70,7 @@ MonoBehaviour:
   spawnSound: {fileID: 8300000, guid: d1d682ad3480ac04dbc9140928a57935, type: 3}
   deathSound: {fileID: 8300000, guid: cd5c0b2becd4f354d908b1a794e8dd2d, type: 3}
   destroyedOnImpact: 1
-  yAxisErrorRange: 17.25
+  yAxisErrorRange: 13
 --- !u!65 &1154284595
 BoxCollider:
   m_ObjectHideFlags: 0

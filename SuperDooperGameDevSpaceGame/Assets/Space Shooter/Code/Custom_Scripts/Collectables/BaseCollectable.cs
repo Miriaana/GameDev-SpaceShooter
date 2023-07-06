@@ -5,6 +5,7 @@ using UnityEngine;
 public class BaseCollectable : MonoBehaviour
 {
     public int pointsToScore = 10;
+    public float ammoChargeIncrease = 1f;
     [SerializeField] float moveSpeed = 5f;
     Vector3 moveDirection;
     Rigidbody body;
@@ -30,7 +31,8 @@ public class BaseCollectable : MonoBehaviour
         if(other.gameObject.GetComponent<SpaceshipMainComponent>() != null)
         {
             other.gameObject.GetComponent<SpaceshipMainComponent>().score += pointsToScore;
-            other.gameObject.GetComponent<SpaceshipMainComponent>().thisUiPlayer.UpdateScore(pointsToScore);
+            other.gameObject.GetComponent<SpaceshipMainComponent>().AddAmmoCharge(ammoChargeIncrease);
+
             Destroy(gameObject);
         }
     }

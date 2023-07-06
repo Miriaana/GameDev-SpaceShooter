@@ -5,10 +5,9 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Weapon : MonoBehaviour
 {
-    public float weight = 1f;
     public int teamNumber = 0;
     public float damage = 10f, shotsPerSecond = 1f;
-    [SerializeField, Range(0f, 1f)] float armorPenetration = 0f;
+    [Range(0f, 1f)] public float armorPenetration = 0f;
     [SerializeField] GameObject instantiatedProjectile;
     [SerializeField] Transform firePoint;
     [SerializeField] float missFireDegrees = 3f, flashSize = 0.33f;
@@ -31,11 +30,11 @@ public class Weapon : MonoBehaviour
         return shotsPerSecond;
     }
 
-    public void FireWeapon()
+    public void FireWeapon(SpaceshipMainComponent associatedShip = null)
     {
         var obj = Instantiate(instantiatedProjectile, firePoint.transform.position, transform.rotation);
         obj.transform.eulerAngles = firePoint.eulerAngles + firePoint.up * Random.Range(-missFireDegrees, missFireDegrees);
-        obj.GetComponent<BaseDamagingProjectile>().SetStats(teamNumber, damage, armorPenetration, firePoint);
+        obj.GetComponent<BaseDamagingProjectile>().SetStats(teamNumber, damage, armorPenetration, firePoint, associatedShip);
         if(muzzleFlash != null)
             muzzleFlash.transform.localScale = Vector3.one * flashSize;
     }

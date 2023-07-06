@@ -12,7 +12,7 @@ public class UIManager : MonoBehaviour
     public int assignmentIndex = 0;
     //public float timeRemaining;
     public UIGameOver GameOverMenu;
-    public UIShipSelection SelectionMenu;
+    public GameObject SelectionMenu;
     public GameObject GameOverlay;
 
     // Start is called before the first frame update
@@ -41,37 +41,28 @@ public class UIManager : MonoBehaviour
 
     public void RestartGame()
     {
-        Debug.Log("Restarting Game");
         GameStateManager.Instance.RestartGame();
     }
 
     public void OpenSelectionScreen()
     {
-        SelectionMenu.gameObject.SetActive(true);
+        SelectionMenu.SetActive(true);
     }
 
     public void StartGameOverlay()
     {
-        SelectionMenu.gameObject.SetActive(false);
-        GameOverlay.gameObject.SetActive(true);
-        /*foreach(UIPlayer uiPlayer in uIPlayers) { 
-            uiPlayer.gameObject.SetActive(true);
-        }*/
-        //TimerText.gameObject.SetActive(true);
+        SelectionMenu.SetActive(false);
+        GameOverlay.SetActive(true);
     }
 
     public void CloseGameOverlay()
-    {/*
-        foreach (UIPlayer uiPlayer in uIPlayers)
-        {
-            uiPlayer.gameObject.SetActive(false);
-        }*/
-        GameOverlay.gameObject.SetActive(false);
+    {
+        GameOverlay.SetActive(false);
         TimerText.gameObject.SetActive(false);
     }
 
     public void OpenGameOverMenu()
     {
-        GameOverMenu.gameObject.SetActive(true);
+        //GameOverMenu.gameObject.SetActive(true);
     }
 }

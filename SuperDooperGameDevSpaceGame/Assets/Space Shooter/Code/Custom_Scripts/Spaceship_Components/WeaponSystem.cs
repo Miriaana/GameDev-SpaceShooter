@@ -7,9 +7,9 @@ public class WeaponSystem : MonoBehaviour
     public string WeaponName;
     public enum FireMode { Alternating, Simultaneously }
     [SerializeField] FireMode fireMode;
-    [SerializeField] int curAmmo = 3;
+    public int curAmmo = 3;
     public Weapon[] allWeapons;
-    public float fireRatePerSecond = 2f;
+    public float fireRatePerSecond = 0f;
     public bool limitedAmmo = false;
     bool limitedAmmoSwitch = false;
     float weaponTimer = 0f;
@@ -32,19 +32,24 @@ public class WeaponSystem : MonoBehaviour
 
     public void SetStats()
     {
+        fireRatePerSecond = GetFireRate();
+    }
+
+    public float GetFireRate()
+    {
         float newShotsPerSecond = 0f;
         for (int i = 0; i < allWeapons.Length; i++)
         {
             newShotsPerSecond += allWeapons[i].GetFireRate();
         }
-        if(fireMode == FireMode.Simultaneously)
+        if (fireMode == FireMode.Simultaneously)
         {
             newShotsPerSecond /= allWeapons.Length;
         }
-        fireRatePerSecond = newShotsPerSecond;
+        return newShotsPerSecond;
     }
 
-    public void Fire()
+    public void Fire(SpaceshipMainComponent assocShip)
     {
         if (limitedAmmoSwitch && curAmmo > 0 || !limitedAmmoSwitch)
         {
@@ -53,8 +58,8 @@ public class WeaponSystem : MonoBehaviour
                 weaponTimer = 1f / fireRatePerSecond;
                 switch (fireMode)
                 {
-                    case FireMode.Alternating: FireAlternating(); break;
-                    case FireMode.Simultaneously: FireSimultaneously(); break;
+                    case FireMode.Alternating: FireAlternating(assocShip); break;
+                    case FireMode.Simultaneously: FireSimultaneously(assocShip); break;
                 }
                 if(limitedAmmoSwitch)
                 {
@@ -67,13 +72,18 @@ public class WeaponSystem : MonoBehaviour
     public float GetWeaponDps()
     {
         int weaponCount = allWeapons.Length;
-        float singleWeaponDmg = allWeapons[0].damage;
-        return weaponCount* singleWeaponDmg;
+        float singleWeaponDmg = allWeapons[0].damage * (1f + allWeapons[0].armorPenetration);
+        switch(fireMode)
+        {
+            case FireMode.Alternating: return GetFireRate() * singleWeaponDmg;
+            case FireMode.Simultaneously: return GetFireRate() * weaponCount * singleWeaponDmg;
+        }
+        return 0;
     }
 
-    void FireAlternating()
+    void FireAlternating(SpaceshipMainComponent assocShip)
     {
-        allWeapons[weaponIndex].FireWeapon();
+        allWeapons[weaponIndex].FireWeapon(assocShip);
         weaponIndex++;
         if(weaponIndex >= allWeapons.Length)
         {
@@ -81,11 +91,11 @@ public class WeaponSystem : MonoBehaviour
         }
     }
 
-    void FireSimultaneously()
+    void FireSimultaneously(SpaceshipMainComponent assocShip)
     {
         foreach(Weapon weapon in allWeapons)
         {
-            weapon.FireWeapon();
+            weapon.FireWeapon(assocShip);
         }
     }
 }

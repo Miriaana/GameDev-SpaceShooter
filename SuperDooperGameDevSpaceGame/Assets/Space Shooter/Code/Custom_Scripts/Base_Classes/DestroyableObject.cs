@@ -17,10 +17,15 @@ public class DestroyableObject : MonoBehaviour
         compHull = GetComponent<Hull>();
     }
 
-    public virtual void DamageHull(float takenDamage, float armorPen = 0f)
+    public virtual void DamageHull(float takenDamage, float armorPen = 0f, SpaceshipMainComponent associatedShip = null)
     {
-        float remainingHealth = compHull.TakeDamage(takenDamage, armorPen);
-        if (remainingHealth <= 0 && !hasBeenDestroyed)
+        float healthBefore = compHull.curHealth;
+        float healthAfter = compHull.TakeDamage(takenDamage, armorPen);
+        if(associatedShip != null )
+        {
+            associatedShip.score += Mathf.RoundToInt(Mathf.Clamp(healthBefore - healthAfter, 0f, float.MaxValue));
+        }
+        if (healthAfter <= 0 && !hasBeenDestroyed)
         {
             hasBeenDestroyed = true;
             DestroyThis();

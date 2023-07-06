@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &5418021433391669895
+--- !u!1 &6867251319863155682
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,51 +8,51 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5420892143411555177}
-  - component: {fileID: 5422411642274392571}
-  - component: {fileID: 5431778937324665753}
-  - component: {fileID: 5463248639963994067}
-  - component: {fileID: 5419473029151195238}
-  - component: {fileID: 5419473029151195239}
-  - component: {fileID: 5419473029151195236}
-  - component: {fileID: 5419473029151195237}
+  - component: {fileID: 3633921184046530896}
+  - component: {fileID: 8115734587233172966}
+  - component: {fileID: 7749725545092125874}
+  - component: {fileID: 4190345118224666432}
+  - component: {fileID: 1000695554873979716}
+  - component: {fileID: 2806856481344800328}
+  - component: {fileID: 2774927760621361375}
+  - component: {fileID: 2330241025804829337}
   m_Layer: 9
-  m_Name: Very_Tough_Asteroid
+  m_Name: Asteroid_Very_Small_Ammo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5420892143411555177
+--- !u!4 &3633921184046530896
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -21.461184, y: 0, z: 84.43763}
-  m_LocalScale: {x: 2, y: 2, z: 2}
-  m_ConstrainProportionsScale: 0
+  m_LocalPosition: {x: -0.9790993, y: 0, z: 94.3}
+  m_LocalScale: {x: 2.5, y: 2.5, z: 2.5}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &5422411642274392571
+--- !u!33 &8115734587233172966
 MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
-  m_Mesh: {fileID: 4300000, guid: 1d4381c34363cde458743078c5f69835, type: 3}
---- !u!23 &5431778937324665753
+  m_GameObject: {fileID: 6867251319863155682}
+  m_Mesh: {fileID: 4300000, guid: 387b964012dd6d94bb07789cf0731dfb, type: 3}
+--- !u!23 &7749725545092125874
 MeshRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -88,27 +88,27 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &5463248639963994067
+--- !u!64 &4190345118224666432
 MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
   m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 1d4381c34363cde458743078c5f69835, type: 3}
---- !u!54 &5419473029151195238
+  m_Mesh: {fileID: 4300000, guid: 387b964012dd6d94bb07789cf0731dfb, type: 3}
+--- !u!54 &1000695554873979716
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
   serializedVersion: 2
   m_Mass: 1
   m_Drag: 0
@@ -118,28 +118,13 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
---- !u!114 &5419473029151195239
+--- !u!114 &2806856481344800328
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14057778b09697a4eb724a911b9bbb8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1000
-  curHealth: 1000
-  armor: 1000
---- !u!114 &5419473029151195236
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 03546fa59f7c52e448b6b9cf11a5e45c, type: 3}
@@ -148,21 +133,36 @@ MonoBehaviour:
   teamNumber: 1
   objectSize: 1
   instantiatedDebris:
-  - {fileID: 1290715649332758, guid: 587eaecaa621be74486f351c78b4f0a8, type: 3}
---- !u!114 &5419473029151195237
+  - {fileID: 1290715649332758, guid: 85b4d3f3a34b1ca49b77afe6296ea1bd, type: 3}
+  - {fileID: 7728481902777875411, guid: 4a4e8ef6a1c603c42afa2ac5035d2800, type: 3}
+--- !u!114 &2774927760621361375
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5418021433391669895}
+  m_GameObject: {fileID: 6867251319863155682}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14057778b09697a4eb724a911b9bbb8e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 100
+  curHealth: 100
+  armor: 100
+--- !u!114 &2330241025804829337
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6867251319863155682}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 33de35fe5e3197f4ea4ca12b70811c89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 10
-  changeFrequency: 1
+  moveSpeed: 30
   directionRandomizer: 0
-  rotationSpeeds: {x: 120, y: 120, z: 120}
+  rotationSpeeds: {x: 200, y: 200, z: 200}
   collisionInst: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}

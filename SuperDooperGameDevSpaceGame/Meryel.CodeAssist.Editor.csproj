@@ -54,16 +54,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Analyzer Include="C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\Extensions\Microsoft\Visual Studio Tools for Unity\Analyzers\Microsoft.Unity.Analyzers.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Runtime.CompilerServices.Unsafe.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Memory.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Threading.Tasks.Extensions.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\NaCl.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Serilog.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\NetMQ.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Buffers.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Serilog.Sinks.PersistentFile.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\AsyncIO.dll" />
-    <Analyzer Include="C:\Users\Miriam\Documents\FHTW\4.Sem_2023\GAME\Project\SpaceShooter\SuperDooperGameDevSpaceGame\Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Release\netstandard2.0\UnityCodeAssistSynchronizerModel.dll" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Space Shooter\Plugins\CodeAssist\Editor\Logger\DomainHashEnricher.cs" />
@@ -353,41 +343,23 @@
     <Reference Include="UnityEditor.Graphs">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\Managed\UnityEditor.Graphs.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEditor.Android.Extensions">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\UnityEditor.Android.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEditor.WindowsStandalone.Extensions">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\WindowsStandaloneSupport\UnityEditor.WindowsStandalone.Extensions.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Plastic.Newtonsoft.Json">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe">
+      <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Plastic.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\Unity.Plastic.Antlr3.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VisualScripting.YamlDotNet">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\YamlDotNet\Unity.VisualScripting.YamlDotNet.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.TextureAssets">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.IonicZip">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
-    </Reference>
-    <Reference Include="log4netPlastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
-    </Reference>
-    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
-      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="ReportGeneratorMerged">
-      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
-    </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
-    </Reference>
-    <Reference Include="unityplastic">
-      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Runtime.CompilerServices.Unsafe">
-      <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
     </Reference>
     <Reference Include="Serilog">
       <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Serilog.dll</HintPath>
@@ -398,17 +370,44 @@
     <Reference Include="NetMQ">
       <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\NetMQ.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.TextureAssets">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\EditorAssetResources\Unity.VisualScripting.TextureAssets.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.VisualScripting.IonicZip">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Editor\VisualScripting.Core\Dependencies\DotNetZip\Unity.VisualScripting.IonicZip.dll</HintPath>
+    </Reference>
     <Reference Include="UnityCodeAssistSynchronizerModel">
       <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Release\netstandard2.0\UnityCodeAssistSynchronizerModel.dll</HintPath>
+    </Reference>
+    <Reference Include="log4netPlastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\log4netPlastic.dll</HintPath>
     </Reference>
     <Reference Include="NaCl">
       <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\NaCl.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
+      <HintPath>Library\PackageCache\com.unity.visualscripting@1.7.8\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="ReportGeneratorMerged">
+      <HintPath>Library\PackageCache\com.unity.testtools.codecoverage@1.0.1\lib\ReportGenerator\ReportGeneratorMerged.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>Library\PackageCache\com.unity.nuget.newtonsoft-json@3.0.2\Runtime\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="Serilog.Sinks.PersistentFile">
       <HintPath>Assets\Space Shooter\Plugins\CodeAssist\Editor\ExternalReferences\Serilog.Sinks.PersistentFile.dll</HintPath>
     </Reference>
+    <Reference Include="unityplastic">
+      <HintPath>Library\PackageCache\com.unity.collab-proxy@1.17.2\Lib\Editor\PlasticSCM\unityplastic.dll</HintPath>
+    </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@1.0.6\net35\unity-custom\nunit.framework.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Types">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.Android.Gradle">
+      <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\PlaybackEngines\AndroidPlayer\Unity.Android.Gradle.dll</HintPath>
     </Reference>
     <Reference Include="mscorlib">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\mscorlib.dll</HintPath>
@@ -785,20 +784,24 @@
     <Reference Include="System.Xml.XPath.XDocument">
       <HintPath>C:\Program Files\Unity\Hub\Editor\2021.3.11f1\Editor\Data\UnityReferenceAssemblies\unity-4.8-api\Facades\System.Xml.XPath.XDocument.dll</HintPath>
     </Reference>
-    <Reference Include="UnityEditor.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.UI">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEngine.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEngine.TestRunner.dll</HintPath>
-    </Reference>
-    <Reference Include="UnityEditor.TestRunner">
-      <HintPath>Library\ScriptAssemblies\UnityEditor.TestRunner.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="UnityEditor.UI.csproj">
+      <Project>{FC4E6A92-836C-0847-BDB7-337F4626EA8C}</Project>
+      <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.UI.csproj">
+      <Project>{EE2F8C13-E216-4CAE-242C-E23D318DB44D}</Project>
+      <Name>UnityEngine.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEngine.TestRunner.csproj">
+      <Project>{D4E5FC22-E856-5B25-83FC-143FF447C271}</Project>
+      <Name>UnityEngine.TestRunner</Name>
+    </ProjectReference>
+    <ProjectReference Include="UnityEditor.TestRunner.csproj">
+      <Project>{BF1B8DFB-B6C1-27B7-E8D1-DA815729C994}</Project>
+      <Name>UnityEditor.TestRunner</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

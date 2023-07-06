@@ -27,7 +27,7 @@ public class Turret : MonoBehaviour
             {
                 if (TurnBase() && TurnGuns())
                 {
-                    weaponSystem.Fire();
+                    weaponSystem.Fire(null);
                 }
                 inactiveTimer -= Time.deltaTime;
             }
