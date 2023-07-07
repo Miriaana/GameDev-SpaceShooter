@@ -25,7 +25,7 @@ Start Screen
 - join the game by pressing a button
 - select a ship and confirm your choice
 - the game will start once everyone has confirmed their ship choice
-- 
+
 Main Game
 - shoot the obstacles with main weapon or special weapon to destroy them and gain points
 - collect the drops from destroyed asteroids to charge ammunition for special weapon (charges visible in second bar)
@@ -35,7 +35,7 @@ Main Game
 Bossfight
 - if players are still alive when the timer runs out a boss will spawn
 - try to defeat it and avoid attacks
-- 
+
 GameEnd
 - the game ends when all players are dead of when the boss is defeated
 - the players are ranked based on how many points they gained
