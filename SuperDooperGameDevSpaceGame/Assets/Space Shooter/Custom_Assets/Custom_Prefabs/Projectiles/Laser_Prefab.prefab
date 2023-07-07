@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf658c6e0bfe34740b5c828bdc3f66ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  associatedShip: {fileID: 0}
   moveSpeed: 150
   hitPrefab: {fileID: 965089496273002547, guid: 224f7fa531c76574f9aa6c8e28d95171, type: 3}
   spawnSound: {fileID: 8300000, guid: d1d682ad3480ac04dbc9140928a57935, type: 3}
@@ -146,7 +147,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99e8390ee355dd146a674f9b5eb28ac5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifeTime: 5
+  lifeTime: 2
 --- !u!1 &4938756996683322282
 GameObject:
   m_ObjectHideFlags: 0

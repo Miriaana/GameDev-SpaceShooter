@@ -16972,7 +16972,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentState: 1
   bossControls: {fileID: 1762900342}
-  timeRemaining: 150
+  timeRemaining: 90
   countDownText: {fileID: 1663431511}
   astSpawner: {fileID: 136865840}
 --- !u!4 &1568979671
