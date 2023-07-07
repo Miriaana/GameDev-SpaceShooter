@@ -32,6 +32,7 @@ Main Game
 - if you collide with obstacles you loose health (visible in first bar)
 - if you collide with other player you lose A LOT of health !!!
 - tip: don't die
+
 Bossfight
 - if players are still alive when the timer runs out a boss will spawn
 - try to defeat it and avoid attacks
