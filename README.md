@@ -23,7 +23,7 @@ Group9s Space Shooter Game for GameDev Course SS2023
 
 Start Screen
 - join the game by pressing a button
-- select a ship and confirm your choice
+- select a spaceship and confirm your choice
 - the game will start once everyone has confirmed their ship choice
 
 Main Game
